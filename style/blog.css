@@ -1,0 +1,161 @@
+.blog {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.blog > div {
+    width: 596px;
+    height: 360px;
+    margin-right: 12px;
+    color: #FFFFFF;
+    padding: 1px;
+}
+
+#blog1 {
+    background: url(../media/blogImg1.png);
+}
+#blog2 {
+    background: url(../media/blogImg2.png);
+}
+#blog3 {
+    background: url(../media/blogImg3.png);
+}
+
+.blog > div > a {
+    color: #FFFFFF;
+    display: block;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    margin: auto auto 29px 32px;
+}
+
+.blog > button {
+    border: none;
+    color: #FFFFFF;
+    background-color: #3E683A;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    width: 96px;
+    height: 360px;
+}
+
+.blog > button > a {
+    display: block;
+    transform: rotate(-90deg);
+    width: 270px;
+    height: 40px;
+    margin-left: -97px;
+}
+
+@media screen and (max-width: 1919px) {
+    .blog > div {
+        width: 450px;
+        height: 270px;
+    }
+    
+    .blog > div > a {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+        margin: 178px auto 12px 12px;
+    }
+    .blog > button {
+        width: 52px;
+        height: 270px;
+    }
+    
+    .blog > button > a {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+}
+@media screen and (max-width: 1439px) {
+    .blog > div {
+        width: 312px;
+        height: 200px;
+    }
+    
+    .blog > div > a {
+        font-size: 20px;
+        line-height: 24px;
+        margin: 96px auto 12px 12px;
+    }
+    
+    .blog > button {
+        width: 52px;
+        height: 200px;
+    }
+    
+    .blog > button > a {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-left: -107px;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .blog{
+        flex-wrap: wrap;
+    }
+    .blog > div {
+        width: 249px;
+        height: 165px;
+    }
+    
+    .blog > div > a {
+        font-size: 20px;
+        line-height: 24px;
+        margin: 81px auto 12px 12px;
+    }
+    
+    .blog > button {
+        width: 222px;
+        height: 52px;
+        margin-top: 24px;
+        margin-left: 275px;
+        margin-right: 275px;
+    }
+    
+    .blog > button > a {
+        position: absolute;
+        left: 120px;
+        top: 15px;
+        transform: rotate(360deg);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 767px) {
+    .blog{
+        flex-direction: column;
+    }
+    .blog > div {
+        width: 328px;
+        height: 218px;
+    }
+    .blog > button {
+        position: relative;
+        width: 328px;
+        height: 52px;
+        margin-top: 24px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .blog > button > a {
+        position: absolute;
+        left: 120px;
+        top: 15px;
+        transform: rotate(360deg);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+    }
+}

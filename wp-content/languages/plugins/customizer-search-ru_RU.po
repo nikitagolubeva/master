@@ -1,0 +1,87 @@
+# Translation of Plugins - Customizer Search - Stable (latest release) in Russian
+# This file is distributed under the same license as the Plugins - Customizer Search - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-02-13 17:40:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: ru\n"
+"Project-Id-Version: Plugins - Customizer Search - Stable (latest release)\n"
+
+#. translators: %s Product title
+#: admin/bsf-analytics/class-bsf-analytics.php:408
+msgid "Allow %s products to track non-sensitive usage tracking data."
+msgstr "Разрешить продуктам %s отслеживать неконфиденциальные данные отслеживания использования."
+
+#: admin/bsf-analytics/class-bsf-analytics.php:416
+msgid "Learn More."
+msgstr "Узнать больше."
+
+#: admin/bsf-analytics/class-bsf-analytics.php:411
+msgid " This will be applicable for all sites from the network."
+msgstr " Это будет применимо для всех сайтов из сети."
+
+#: admin/bsf-analytics/class-bsf-analytics.php:364
+msgid "Usage Tracking"
+msgstr "Отслеживание использования"
+
+#: admin/bsf-analytics/class-bsf-analytics.php:260
+msgid "No Thanks"
+msgstr "Нет, спасибо"
+
+#: admin/bsf-analytics/class-bsf-analytics.php:251
+msgid "Yes! Allow it"
+msgstr "Да! Разрешить"
+
+#. translators: %s usage doc link
+#: admin/bsf-analytics/class-bsf-analytics.php:243
+msgid " Know More."
+msgstr " Узнать больше."
+
+#: admin/bsf-analytics/class-bsf-analytics.php:219
+msgid "This will be applicable for all sites from the network."
+msgstr "Это будет применимо ко всем сайтам сети."
+
+#. translators: %s product name
+#: admin/bsf-analytics/class-bsf-analytics.php:216
+msgid "Want to help make <strong>%1s</strong> even more awesome? Allow us to collect non-sensitive diagnostic data and usage information. "
+msgstr "Хотите помочь сделать <strong>%1s</strong> еще более удивительным? Позволяет собирать нечувствительные диагностические данные и информацию об использовании. "
+
+#: lib/notices/class-astra-notices.php:125
+msgid "WordPress Nonce not validated."
+msgstr "WordPress Nonce не подтвержден."
+
+#: templates/admin-customize-js-templates.php:23
+msgid "Clear"
+msgstr "Очистить"
+
+#: templates/admin-customize-js-templates.php:22
+msgid "Search..."
+msgstr "Поиск ..."
+
+#: templates/admin-customize-js-templates.php:20
+msgid "Search"
+msgstr "Поиск"
+
+#. Author URI of the plugin
+msgid "https://www.brainstormforce.com/"
+msgstr "https://www.brainstormforce.com/"
+
+#. Author of the plugin
+msgid "Brainstorm Force"
+msgstr "Brainstorm Force"
+
+#. Description of the plugin
+msgid "Search for settings in customizer."
+msgstr "Поиск настроек в настройщике."
+
+#. Plugin URI of the plugin
+msgid "https://github.com/Nikschavan/customizer-search"
+msgstr "https://github.com/Nikschavan/customizer-search"
+
+#. Plugin Name of the plugin
+msgid "Customizer Search"
+msgstr "Customizer Search"

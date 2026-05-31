@@ -1,0 +1,8 @@
+.env
+*.log
+wp-config.php
+dup-installer-bootlog__*.txt
+.tmb/
+wp-content/wflogs/
+wp-content/themes/garden/Garden/
+wp-content/themes/garden/old/Garden/

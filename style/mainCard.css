@@ -1,0 +1,669 @@
+/* сдвиг под верхний хедер */
+.mainCard{
+    padding-top: 58px;
+}
+
+.mainCardElem1 {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url(../media/mainCardBG1.png) 100% 100% no-repeat;
+}
+
+.mainCardElem1 {
+    height: 859px;
+    padding-top: 1px;
+    background-size: cover;
+}
+
+.mainCardTitle {
+    height: 105px;
+    font-size: 64px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 166px auto 0 auto;
+    text-align: center;
+    font-family: 'Rosa Marena';
+}
+
+.mainCardSubtitle{
+    font-size: 48px;
+    height: 112px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 56px;
+    width: 1440px;
+    margin: 167px auto 0 auto;
+}
+
+.mainCardSubtitle2{
+    display: none
+}
+
+.mainCardButton{
+    display: block;
+    display: flex;
+    border: none;
+    border-radius: 2px;
+    width: 268px;
+    height: 52px;
+    margin: 55px auto 0 auto;
+    background-color: #3E683A;
+}
+
+.mainCardButton > a {
+    display: block;
+    color: #FFFFFF;
+    line-height: 24px;
+    font-family: 'Manrope Light';
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.24em;
+    width: 212px;
+    margin: 14px auto 14px 16px;
+    text-transform: uppercase;
+}
+
+.mainCardButton > img {
+    margin: 14px 12px 14px 4px;
+}
+
+.mainCardLine {
+    height: 142px;
+    background: #00000099;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 240px;
+    padding-right: 240px;
+}
+
+.mainCardLineElement{
+    display: flex;
+    width: 320px;
+    height: 88px;
+    margin-top: 28px;
+}
+
+.LineElementImage > img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin-right: 24px;
+}
+
+.LineElementInfo{
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.LineElementInfo > p {
+    font-family: 'Manrope Regular';
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0;
+    padding-top: 0;
+    margin-bottom: 8px;
+}
+
+.LineElementInfo > a {
+    font-family: 'Manrope Light';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 0;
+    padding-top: 0;
+    vertical-align: top;
+    text-align: left;
+}
+
+.mainCardBottom{
+    display: flex;
+}
+
+.mainCardElem2 {
+    background: url(../media/mainCardBG2.png) no-repeat;
+    background-position: center;
+    background-size: 954px;
+    width: 954px;
+    height: 318px;
+    margin-top: 12px;
+    color: #FFFFFF;
+    padding-top: 1px;
+}
+
+.mainCardElem2title{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 40px;
+    width: 723px;
+    margin: 39px auto 0 40px;
+    font-family: 'Manrope';
+}
+
+.mainCardElem2subtitle{
+    margin: 128px auto 0 40px;
+    font-size: 20px;
+    line-height: 30px;
+    font-family: 'Manrope Light';
+}
+
+.mainCardElem3 {
+    width: 954px;
+    height: 318px;
+    margin-top: 12px;
+    margin-left: 12px;
+    color: #FFFFFF;
+    padding-top: 1px;
+}
+
+.mainCardCaroosel{
+    width: 108px;
+    height: 12px;
+    margin: 24px 24px 0 822px;
+}
+
+.mainCardCarooselSlider{
+    width: 48px;
+    height: 48px;
+    margin: 99px 16px 0 890px;
+}
+
+.mainCardElem3Line {
+    background: #00000066;
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 51px;
+}
+
+.mainCardElem3LineTitle{
+    font-size: 20px;
+    line-height: 30px;
+    margin: 27px 0 27px 16px;
+    font-family: 'Manrope Regular';
+}
+
+.mainCardElem3LineButton{
+    width: 189px;
+    height: 52px;
+    text-transform: uppercase;
+    display: block;
+    display: flex;
+    border: none;
+    color: #FFFFFF;
+    background-color: #3E683A;
+    margin: 16px 16px 16px auto;
+}
+
+.mainCardElem3LineButton > a {
+    line-height: 24px;
+    display: block;
+    margin: 14px auto 14px 16px;
+}
+
+.mainCardElem3LineButton > img {
+    width: 24px;
+    height: 24px;
+    margin: 14px 12px 14px 4px;
+}
+
+.caroosel{
+    display: flex;
+    overflow-x: auto;
+}
+
+.carooselElement {
+    margin-right: 5px;
+    background: url(../media/mainCardBG3.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.caroosel::-webkit-scrollbar, .caroosel::-moz-scrollbar, .caroosel::-o-scrollbar, .caroosel::-ms-scrollbar{
+    display: none;
+}
+
+@media screen and (max-width: 1919px) {
+    .mainCardElem1 {
+        background: 
+            linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+            url(../media/mainCardBG1.png) 100% 100% no-repeat;
+    }
+
+    .mainCardElem1 {
+        width: 1440px;
+        height: 859px;
+    }
+    
+    .mainCardTitle {
+        margin: 244px auto 0 auto;
+    }
+    
+    .mainCardSubtitle{
+        margin: 12px auto 0 auto;
+    }
+    
+    .mainCardButton{
+        margin: 30px auto 0 auto;
+    }
+    
+    .mainCardLine {
+        height: 140px;
+        margin-top: 163px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    
+    .mainCardLineElement{
+        height: 40px;
+        margin-top: 32px;
+    }
+    
+    .mainCardElem2 {
+        background-size: 714px;
+        width: 714px;
+        height: 198px;
+        padding-bottom: 40px;
+    }
+    
+    .mainCardElem2title{
+        font-size: 32px;
+        width: 666px;
+        margin: 24px 24px 0 24px;
+    }
+ 
+    .mainCardElem2subtitle{
+        margin: 80px auto 0 24px;
+    }
+    
+    .mainCardElem3 {
+        background-size: 714px;
+        width: 714px;
+        height: 238px;
+    }
+    
+    .mainCardCaroosel{
+        margin: 23px 24px 0 582px;
+    }
+    
+    .mainCardCarooselSlider{
+        margin: 59px 24px 0 642px;
+    }
+    
+    .mainCardElem3Line {
+        height: 96px;
+        margin-top: 0;
+    }
+    
+    .mainCardElem3LineTitle{
+        width: 465px;
+        margin: 12px 0 24px 24px;
+    }
+    
+    .mainCardElem3LineButton{
+        margin: 16px 24px 28px auto;
+    }
+}
+
+@media screen and (max-width: 1439px) {
+    .mainCardElem1 {
+        background: 
+            linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+            url(../media/mainCardBG1.png) 70% 100% no-repeat;
+    }
+
+    .mainCard{
+        padding-top: 42px;
+    }
+
+    .mainCardElem1 {
+        width: 1024px;
+        height: 776px;
+        /*background: 70% 100%;*/
+    }
+    
+    .mainCardTitle {
+        margin: 169px auto 0 auto;
+    }
+    
+    .mainCardSubtitle{
+        width: 969px;
+        height: 168px;
+    }
+    
+    .mainCardButton{
+        margin: 48px auto 0 auto;
+    }
+  
+    .mainCardLine {
+        margin-top: 82px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    .mainCardLineElement{
+        width: 240px;
+        height: 80px;
+        margin-top: 32px;
+    }
+
+    .LineElementImage > img {
+        margin-right: 12px;
+    }
+
+    .LineElementInfo > p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .LineElementInfo > a {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .mainCardBottom{
+        display: block;
+    }
+
+    .mainCardElem2 {
+        background-size: 1024px;
+        width: 1024px;
+        height: 338px;
+        padding-bottom: 1px;
+    }
+    
+    .mainCardElem2title{
+        width: 630px;
+        margin: 40px auto 0 40px;
+    }
+
+    .mainCardElem2subtitle{
+        display: block;
+        margin: 150px auto 0 40px;
+    }
+
+    .mainCardElem3 {
+        background-size: 1024px;
+        width: 1024px;
+        height: 340px;
+        margin-left: 0;
+    }
+
+    .caroosel > div {
+        width: 1024px;
+        height: 340px;
+    }
+    
+    .mainCardCaroosel{
+        margin: 24px 24px 0 auto;
+    }
+    
+    .mainCardCarooselSlider{
+        margin: 110px 24px 0 auto;
+    }
+    
+    .mainCardElem3Line {
+        width: 1024px;
+        height: 100px;
+        margin-top: 46px;
+    }
+    
+    .mainCardElem3LineTitle{
+        width: 775px;
+        margin: 35px 0 35px 24px;
+    }
+    
+    .mainCardElem3LineButton{
+        margin: 24px 24px 24px auto;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .mainCardElem1 {
+        background: 
+            linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+            url(../media/mainCardBG1.png) 35% 100% no-repeat;
+    }
+
+    .mainCard{
+        padding-top: 58px;
+    }
+
+    .mainCardElem1 {
+        width: 768px;
+        height: 770px;
+    }
+    
+    .mainCardTitle {
+        height: 79px;
+        margin: 128px auto 0 auto;
+        font-size: 48px;
+    }
+    
+    .mainCardSubtitle{
+        margin: 24px auto 0 auto;
+        width: 650px;
+        height: 120px;
+        font-size: 32px;
+        line-height: 40px;
+    }
+    
+    .mainCardButton{
+        margin: 32px auto 0 auto;
+    }
+  
+    .mainCardLine {
+        margin-top: 78px;
+        height: 224px;
+        padding-left: 84px;
+        padding-right: 84px;
+        padding-top: 32px;
+        flex-wrap: wrap;
+    }
+    
+    .mainCardLineElement{
+        width: 240px;
+        height: 80px;
+        margin-top: 0;
+        margin-bottom: 32px;
+    }
+
+    .mainCardBottom{
+        display: block;
+    }
+
+    .mainCardElem2 {
+        background-size: 768px;
+        width: 768px;
+        height: 256px;
+    }
+    
+    .mainCardElem2title{
+        width: 592px;
+        margin: 24px auto 0 24px;
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .mainCardElem2subtitle{
+        margin: 132px auto 0 24px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .mainCardElem3 {
+        background-size: 768px;
+        width: 768px;
+        height: 256px;
+        margin-left: 0;
+    }
+
+    .caroosel > div {
+        width: 768px;
+        height: 256px;
+    }
+    .mainCardElem3Line {
+        width: 768px;
+    }
+    
+    .mainCardCaroosel{
+        display: none;
+    }
+    
+    .mainCardCarooselSlider{
+        margin: 104px 24px 0 auto;
+    }
+    
+    .mainCardElem3Line {
+        margin-top: 4px;
+    }
+    
+    .mainCardElem3LineTitle{
+        margin: 35px 0 35px 24px;
+    }
+    
+    .mainCardElem3LineButton{
+        margin: 24px 24px 24px auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .mainCardElem1 {
+        background: 
+            linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url(../media/mainBG4.jpeg) 15% 90% no-repeat;
+    }
+
+    .mainCard{
+        padding-top: 48px;
+    }
+
+    .mainCardElem1 {
+        width: 360px;
+        height: 714px;
+    }
+    
+    .mainCardTitle {
+        display: none;
+    }
+    
+    .mainCardSubtitle{
+        display: none;
+    }
+
+    .mainCardSubtitle2{
+        display: block;
+        color: #FFFFFF;
+        font-family: "Manrope Regular";
+        margin: 90px 30px 0 16px;
+        width: 314px;
+        height: 120px;
+        font-size: 32px;
+        line-height: 40px;
+        text-align: left;
+    }
+    
+    .mainCardButton{
+        margin: 27px 76px 0 16px;
+    }
+  
+    .mainCardLine {
+        margin-top: 41px;
+        height: 352px;
+        padding: 16px 20px 16px 20px;
+        flex-direction: column;
+    }
+    
+    .mainCardLineElement{
+        width: 320px;
+        height: 68px;
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    .LineElementInfo > p {
+        width: 260px;
+        font-size: 18px;
+        line-height: 20px;
+        margin-bottom: 4px;
+    }
+
+    .LineElementInfo > a {
+        height: 40px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .mainCardBottom{
+        display: block;
+    }
+
+    .mainCardElem2 {
+        background-size: 360px;
+        width: 360px;
+        height: 120px;
+        margin-top: 4px;
+    }
+    
+    .mainCardElem2title{
+        width: 328px;
+        margin: 16px 16px 0 16px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .mainCardElem2subtitle{
+        margin: 4px auto 0 16px;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .mainCardElem3 {
+        background-size: 330px;
+        width: 330px;
+        height: 110px;
+        margin-left: 0;
+        margin-top: 4px;
+    }
+    
+    .mainCardCaroosel{
+        display: none;
+    }
+    
+    .mainCardCarooselSlider{
+        display: none;
+    }
+    
+    .mainCardElem3Line {
+        margin-top: 34px;
+        width: 330px;
+    }
+    
+    .mainCardElem3LineTitle{
+        margin: 12px 0 16px 16px;
+    }
+    
+    .mainCardElem3LineButton{
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        margin: 16px 12px 20px auto;
+    }
+    .mainCardElem3LineButton > a {
+        display: none;
+    }
+    .mainCardElem3LineButton > img {
+        margin: 0;
+    }
+    .caroosel{
+        width: 360px;
+    }
+
+    .caroosel > div {
+        width: 330px;
+        height: 110px;
+    }
+}

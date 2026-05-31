@@ -1,0 +1,153 @@
+.recommend{
+    padding-left: 32px;
+}
+
+.recommendTitle{
+    margin-top: 100px;
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 600;
+}
+
+.recommendCaroosel{
+    display: flex;
+    overflow-x: auto;
+    margin-top: 48px;
+}
+
+.recommendCarooselItem{
+    width: 232px;
+    height: 356px;
+    margin-right: 32px;
+    margin-bottom: 36px;
+}
+
+.recommendCarooselItemPict{
+    background: url(../media/recommendCarooselItemPictBG.png) no-repeat;
+    background-position: center;
+    width: 232px;
+    height: 232px;
+    overflow: hidden;
+}
+
+.recommendCarooselItemPict > img {
+    display: block;
+    margin: 180px 12px 12px 180px;
+}
+
+.recommendCarooselItemName{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    margin-top: 16px;
+}
+
+.recommendCarooselItemPrice{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.recommendCarooselItemStatus{
+    background: #F4F5F6;
+    color: #7E899A;
+    width: 93px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: 16px;
+    padding: 4px 8px 4px 8px;
+}
+
+.recommendCarooselButtonset{
+    display: none;
+    margin-top: 16px;
+}
+
+.buttonRecommendBuy{
+    width: 136px;
+    height: 52px;
+    background-color: #3E683A;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border:none;
+}
+
+.buttonRecommendCart{
+    width: 52px;
+    height: 52px;
+    background-color: #3E683A;
+    border:none;
+}
+
+@media screen and (max-width: 1919px) {
+
+}
+@media screen and (max-width: 1439px) {
+
+}
+@media screen and (max-width: 1023px) {
+    .recommendTitle{
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .recommend{
+        padding-left: 16px;
+    }
+    
+    .recommendTitle{
+        margin-top: 50px;
+        font-size: 32px;
+        line-height: 40px;
+    }
+    
+    .recommendCaroosel{
+        display: flex;
+        overflow-x: auto;
+        margin-top: 24px;
+    }
+    
+    .recommendCarooselItem{
+        width: 200px;
+        height: 368px;
+        margin-right: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .recommendCarooselItemPict{
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .recommendCarooselItemPict > img {
+        margin: 148px 12px 12px 148px;
+    }
+    
+    .recommendCarooselItemName{
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    .recommendCarooselItemPrice{
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    .recommendCarooselItemStatus{
+        width: 84px;
+        height: 28px;
+        font-size: 14px;
+        line-height: 20px;
+        margin-left: 8px;
+    }
+    
+    .recommendCarooselButtonset{
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,232 @@
+.helpForm{
+    background: url(../media/formBG.png) no-repeat;
+    background-size: cover;
+    width: 1920px;
+    height: 516px;
+    color: #FFFFFF;
+    display: flex;
+    margin-top: 100px;
+}
+
+.helpFormAbout{
+    padding-left: 240px;
+}
+
+.helpFormTitle{
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 56px;
+    width: 467px;
+    margin-top: 168px;
+}
+
+.helpFormSubtitle{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    margin-top: 28px;
+    width: 730px;
+}
+
+.form{
+    margin-right: 0;
+    margin-left: auto;
+    width: 720px;
+    height: 416px;
+    background-color: #00000066;
+    padding-left: 80px;
+    padding-top: 100px;
+    border:none;
+}
+
+.formPoint{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 0;
+    margin-left: 80px;
+}
+
+.formInput{
+    width: 400px;
+    height: 62px;
+    background-color: #FFFFFF;
+    color: #C6CBD2;
+    margin-bottom: 24px;
+    border:none;
+    font-size: 20px;
+    text-indent: 24px;
+    margin-left: 80px;
+}
+
+.formButton{
+    width: 400px;
+    height: 52px;
+    background-color: #3E683A;
+    border: none;
+    color: #FFFFFF;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 8px auto 100px 80px;
+}
+
+@media screen and (max-width: 1919px) {
+    .helpForm{
+        width: 1440px;
+    }
+    
+    .helpFormAbout{
+        padding-left: 32px;
+    }
+    
+    .helpFormTitle{
+        width: 467px;
+    }
+    
+    .helpFormSubtitle{
+        width: 730px;
+    }
+    
+    .form{
+        width: 600px;
+    }
+}
+@media screen and (max-width: 1439px) {
+    .helpForm{
+        width: 1024px;
+        height: 516px;
+    }
+    
+    .helpFormAbout{
+        padding-left: 33px;
+    }
+    
+    .helpFormTitle{
+        margin-top: 86px;
+    }
+    
+    .helpFormSubtitle{
+        margin-top: 68px;
+        width: 394px;
+    }
+    
+    .form{
+        width: 394px;
+        height: 416px;
+        padding-left: 48px;
+    }
+    
+    .formPoint{
+        margin-left: 48px;
+    }
+    
+    .formInput{
+        font-size: 20px;
+        text-indent: 30px;
+    }
+    
+    .formButton{
+        margin: 8px auto 100px 48px;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .helpForm{
+        width: 768px;
+        height: 548px;
+        display: block;
+    }
+    
+    .helpFormAbout{
+        padding-left: 0;
+    }
+    
+    .helpFormTitle{
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+        width: 570px;
+        margin-top: 32px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .helpFormSubtitle{
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+        margin-top: 24px;
+        width: 570px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .form{
+        margin-right: auto;
+        margin-left: auto;
+        width: 768px;
+        height: 548px;
+    }
+    
+    .formPoint{
+        margin-left: 184px;
+    }
+    
+    .formInput{
+        width: 400px;
+        height: 62px;
+        margin-bottom: 24px;
+        margin-left: 184px;
+    }
+    
+    .formButton{
+        margin: 8px auto 32px 184px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .helpForm{
+        margin-top: 50px;
+        width: 360px;
+        height: 616px;
+        display: block;
+    }
+    
+    .helpFormAbout{
+        padding-left: 0;
+    }
+    
+    .helpFormTitle{
+        width: 328px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .helpFormSubtitle{
+        margin-top: 32px;
+        width: 328px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 0;
+    }
+    
+    .form{
+        width: 360px;
+        height: 616px;
+        padding: 0;
+    }
+    
+    .formPoint{
+        margin-left: 16px;
+    }
+    
+    .formInput{
+        width: 400px;
+        height: 62px;
+        margin-bottom: 24px;
+        margin-left: 16px;
+    }
+    
+    .formButton{
+        margin: 0 auto 100px 16px;
+    }
+}

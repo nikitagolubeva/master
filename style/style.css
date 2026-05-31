@@ -1,0 +1,76 @@
+@import url(./mainCard.css);
+@import url(./assortiment.css);
+@import url(./recommend.css);
+@import url(./examples.css);
+@import url(./helpForm.css);
+@import url(./reviews.css);
+@import url(./blog.css);
+@import url(./headers.css);
+@import url(./footer.css);
+@import url(./hiddenMenu.css);
+
+@font-face {
+    font-family: "Rosa Marena";
+    src: url(../fonts/rosamarena.ttf);
+}
+
+@font-face {
+    font-family: "Manrope";
+    src: url(../fonts/Manrope-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "Manrope Regular";
+    src: url(../fonts/Manrope-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Manrope Light";
+    src: url(../fonts/Manrope-Light.ttf);
+}
+
+body{
+    background: url(../media//totalBG.png);
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+* {
+    font-family: 'Manrope';
+}
+
+header{
+    background-color: #3E683A;
+}
+
+button{
+    border-radius: 2px;
+}
+
+button > a {
+    font-family: 'Manrope Light';
+    letter-spacing: 0.4em;
+}
+
+@media screen and (max-width: 1919px) {
+    body {
+        width: 1440px;
+    }
+}
+@media screen and (max-width: 1439px) {
+    body {
+        width: 1024px;
+    }
+}
+@media screen and (max-width: 1023px) {
+    body {
+        width: 768px;
+    }
+}
+@media screen and (max-width: 767px) {
+    body {
+        width: 360px;
+    }
+}

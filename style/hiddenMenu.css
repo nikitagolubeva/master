@@ -1,0 +1,126 @@
+nav {
+    display: block;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+
+nav:hover, nav:active{
+    background-color: #FFFFFF;
+    color: #24282E;
+    width: 326px;
+    min-height: 1001px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    padding-left: 18px;
+    padding-right: 16px;
+}
+
+.hiddenMenuTitle {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.hiddenMenuTitle > p {
+    margin-top: -1px;
+}
+
+.hiddenMenuList{
+    padding-bottom: 24px;
+    border-bottom: solid #000000 1px;
+}
+
+.hiddenMenuList > div{
+    margin-top: 24px;
+    font-family: "Manrope Light";
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.hiddenMenuList > div:hover{
+    color: #3E683A;
+}
+
+#hiddenCatalog>a {
+    font-family: "Manrope Light";
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.extraHiddenMenu > div {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    font-family: "Manrope Light";
+    margin-top: 24px;
+}
+
+.extraHiddenMenu > div > img {
+    margin-right: 8px;
+    margin-top: 3px;
+}
+
+#hiddenCatalog {
+    width: 250px;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#hiddenCatalog:hover{
+    height: 915px;
+}
+
+#hiddenCatalog > div:hover {
+    color: #3E683A;
+}
+
+.hiddenMenu{
+    height: 890px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hiddenMenu > a {
+    display: block;
+    font-family: "Manrope Light";
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 400px;
+    line-height: 20px;
+}
+
+.hiddenMenu > a:hover{
+    color: #3E683A;
+}
+
+#extra:hover {
+    color: #3E683A;
+}
+
+.hiddenShortCut{
+    margin-top: -20px;
+}
+
+.hiddenExtraCategories{
+    height: 0px;
+    width: 360px;
+}
+
+#hiddenCatalog > a {
+    width: 320px;
+}
+
+#extra:hover, #extra > * :hover{
+    color: #24282E;
+
+}

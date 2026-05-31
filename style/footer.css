@@ -1,0 +1,422 @@
+footer{
+    height: 468px;
+    margin-top: 12px;
+    padding-bottom: 24px;
+    background-color: #24282E;
+    color: #FFFFFF;
+    padding: 48px 240px 0 240px;
+}
+
+.footerTable{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerTitle{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600px;
+    margin-bottom: 24px;
+}
+
+.footerLinkTable {
+    width: 346px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.footerLinkTable > a {
+    display: block;
+    font-family: 'Manrope Light';
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400px;
+}
+
+#row1 {
+    width: 130px;
+}
+
+#row2 {
+    width: 208px;
+}
+
+.footerAddressInfo{
+    width: 594px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#AddressCell{
+    width: 258px;
+    display: flex;
+    margin-right: 24px;
+}
+
+#AddressCell > img {
+    margin-right: 8px;
+}
+
+#AddressInfoCell{
+    display: block;
+    width: 226px;
+    height: 90px;
+    font-family: 'Manrope Light';
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400px;
+}
+
+.footerContactsInfo{
+    width: 210px;
+    height: 132px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footerContactsInfo > a {
+    display: block;
+    font-family: 'Manrope Light';
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400px;
+}
+
+.whatsappButtonSet{
+    margin-top: 24px;
+    width: 112px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerLogo{
+    margin-left: 536px;
+    margin-top: 63px;
+}
+
+.footerBottom{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 24px;
+}
+
+.copyright{
+    width: 369px;
+    height: 60px;
+}
+
+.copyright > a {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: left;
+    font-weight: 400;
+    font-family: 'Manrope Light';
+}
+
+.footerSign{
+    font-family: 'Rosa Marena';
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 100%;
+    width: 348px;
+}
+
+.footerElse{
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footerElse > p {
+    width: 303px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: right;
+    font-weight: 400;
+    font-family: 'Manrope Light';
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 1919px) {
+    footer{
+        padding: 48px 32px 0 32px;
+    }
+}
+@media screen and (max-width: 1439px) {
+    footer{
+        width: 960px;
+        height: 631px;
+        padding: 29px 88px auto 16px;
+    }
+    
+    .footerTable{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .footerMenu {
+        width: 960px;
+    }
+    
+    .footerLinkTable {
+        width: 960px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    
+    #row1 {
+        width: auto;
+    }
+    
+    #row2 {
+        width: auto;
+    }
+    
+    .footerLogo{
+        margin-left: 0;
+    }
+
+    .footerLogo > img {
+        width: 217px;
+        height: 50px;
+    }
+    
+    .footerBottom{
+        display: block;
+    }
+    
+    .copyright{
+        width: 369px;
+        height: 60px;
+    }
+    
+    .copyright > a {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: left;
+        font-weight: 400;
+        font-family: 'Manrope Light';
+    }
+    
+    .footerSign{
+        display: none;
+    }
+    
+    .footerElse > p {
+        text-align: left;
+    }
+}
+@media screen and (max-width: 1023px) {
+    footer{
+        width: 736px;
+        height: 729px;
+        padding: 32px 16px 32px 16px;
+    }
+
+    .footerMenu {
+        width: 700px;
+        margin-bottom: 32px;
+    }
+    
+    .footerLinkTable {
+        width: 700px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    #row1 {
+        width: 90px;
+        margin-right: 16px;
+    }
+    
+    #row2 {
+        width: 210px;
+        margin-right: 16px;
+    }
+
+    .workingTime {
+        display: none;
+    }
+
+    .workingTime#AddressCell {
+        display: none;
+    }
+
+    .footerAddressInfo{
+        width: 328px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        margin-bottom: 32px;
+    }
+    
+    .footerContacts{
+        margin-right: 118px;
+    }
+
+    .footerLogo{
+        margin-left: 0;
+    }
+
+    .footerLogo > img {
+        width: 295px;
+        height: 67px;
+    }
+    
+    .footerBottom{
+        display: block;
+    }
+    
+    .copyright{
+        width: 369px;
+        height: 60px;
+        margin-top: 30px;
+    }
+    
+    .footerSign{
+        display: block;
+        margin-top: -90px;
+        margin-left: 32px;
+        font-size: 24px;
+    }
+
+    .footerElse {
+        margin-top: 65px;
+    }
+    
+    .footerElse > p {
+        text-align: left;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 767px) {
+    footer{
+        width: 328px;
+        height: 1033px;
+        padding: 32px 16px 32px 16px;
+    }
+    
+    .footerTable{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .footerLinkTable {
+        width: 346px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+    
+    .footerLinkTable > a {
+        display: block;
+        font-family: 'Manrope Light';
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 400px;
+    }
+    
+    #row1 {
+        width: 90px;
+    }
+    
+    #row2 {
+        width: 208px;
+    }
+    
+    .footerAddressInfo{
+        width: 594px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    #AddressCell{
+        width: 258px;
+        display: flex;
+        margin-right: 24px;
+    }
+    
+    #AddressCell > img {
+        margin-right: 8px;
+    }
+    
+    #AddressInfoCell{
+        display: block;
+        width: 226px;
+        height: 90px;
+        font-family: 'Manrope Light';
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 400px;
+    }
+    
+    .footerContactsInfo{
+        width: 210px;
+        height: 132px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .footerContactsInfo > a {
+        display: block;
+        font-family: 'Manrope Light';
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 400px;
+    }
+    
+    .whatsappButtonSet{
+        margin-top: 24px;
+        width: 112px;
+        height: 32px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .footerLogo{
+        margin-left: 0;
+        margin-top: 32px;
+    }
+    
+    .footerBottom{
+        display: block;
+        padding-bottom: 24px;
+    }
+    
+    .copyright{
+        width: 369px;
+        height: 60px;
+        margin-bottom: 55px;
+        margin-top: 60px;
+    }
+    
+    .copyright > a {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: left;
+        font-weight: 400;
+        font-family: 'Manrope Light';
+    }
+    
+    .footerSign{
+        display: block;
+        margin-top: -175px;
+        margin-left: 32px;
+        font-size: 24px;
+    }
+    
+    .footerElse{
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 110px;
+    }
+}

@@ -1,0 +1,157 @@
+.examples{
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 100px;
+}
+
+.mainExample{
+    background: url(../media/exampleImg.png) no-repeat;
+    background-size: cover;
+    width: 1920px;
+    height: 600px;
+    margin-bottom: 12px;
+    color: #FFFFFF;
+    padding-top: 1px;
+}
+
+.mainExampleTitle{
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 600;
+    width: 1253px;
+    margin: 240px auto 0 240px;
+}
+
+.mainExampleButton{
+    border: none;
+    background-color: #3E683A;
+    width: 241px;
+    height: 52px;
+    margin: 32px auto 166px 240px;
+    display: flex;
+}
+
+.mainExampleButton > a {
+    display: block;
+    color: #FFFFFF;
+    line-height: 24px;
+    font-size: 16px;
+    text-align: left;
+    letter-spacing: 30%;
+    width: 212px;
+    margin: auto 0 auto 16px;
+    text-transform: uppercase;
+}
+
+.mainExampleButton> img {
+    margin: 12px 14px 12px 4px;
+}
+
+.examplesGallery {
+    display: flex;
+    justify-content: space-between;
+}
+
+.examplesGallery > div{
+    background: url(../media/exampleImg.png) no-repeat;
+    background-size: contain;
+    width: 632px;
+    height: 360px;
+}
+
+@media screen and (max-width: 1919px) {
+    .mainExample{
+        width: 1440px;
+    }
+    
+    .mainExampleTitle{
+        margin: 240px auto 0 32px;    
+    }
+    
+    .mainExampleButton{
+        margin: 32px auto 178px 32px;
+    }
+    
+    .examplesGallery > div{
+        width: 472px;
+        height: 360px;
+    }
+}
+@media screen and (max-width: 1439px) {
+    .mainExample{
+        width: 1025px;
+    }
+    
+    .mainExampleTitle{
+        width: 908px;
+    }
+    
+    .mainExampleButton{
+        margin: 32px auto 108px 32px;
+    }
+
+    .examplesGallery > div{
+        width: 333px;
+        height: 255px;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .mainExample{
+        width: 768px;
+        height: 450px;
+        margin-bottom: 8px;
+    }
+    
+    .mainExampleTitle{
+        font-size: 32px;
+        line-height: 40px;
+        width: 716px;
+        margin: 150px auto 0 16px;
+    }
+    
+    .mainExampleButton{
+        margin: 32px auto 136px 16px;
+    }
+    
+    .mainExampleButton> img {
+        margin: 12px 14px 12px 4px;
+    }
+
+    .examplesGallery > div{
+        width: 250px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .examples{
+        margin-top: 50px;
+    }
+    
+    .mainExample{
+        width: 360px;
+        height: 332px;
+    }
+    
+    .mainExampleTitle{
+        font-size: 32px;
+        line-height: 32px;
+        width: 328px;
+        margin: 32px auto 0 16px;
+    }
+    
+    .mainExampleButton{
+        border: none;
+        background-color: #3E683A;
+        width: 241px;
+        height: 52px;
+        margin: 56px auto 32px 17px;
+    }
+
+    .mainExampleButton> img {
+        display: none;
+    }
+    
+    .examplesGallery {
+        display: none;
+    }
+}

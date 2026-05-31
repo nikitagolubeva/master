@@ -1,0 +1,162 @@
+.reviews{
+    display: flex;
+    margin-top: 120px;
+    margin-right: 0;
+}
+
+.reviewPicture{
+    background: url(../media/reviewPictureBG.png) no-repeat;
+    width: 874px;
+    height: 700px;
+    background-size: cover;
+}
+
+.reviewTextBlock{
+    padding-left: 80px;
+    height: 700px;
+    background: #3E683A;
+    color: #FFFFFF;
+    flex-grow: 1;
+}
+
+.reviewTextBlock > h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 56px;
+    margin-top: 72px;
+}
+
+.reviewTextBlock > h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    margin-top: 46px;
+    width: 662px;
+}
+
+.reviewTextBlock > p {
+    width: 662px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 32px;
+}
+
+.reviewTextBlock > h3 {
+    font-size: 20px;
+    font-weight: 600px;
+    line-height: 24px;
+    margin-top: 32px;
+    margin-bottom: 98px;
+}
+
+.reviewSlider > button {
+    border: none;
+    background-color: #3E683A;
+}
+
+.reviewSlider{
+    margin-bottom:  32px;
+}
+
+@media screen and (max-width: 1919px) {
+    .reviewPicture{
+        width: 600px;
+    }
+    
+    .reviewTextBlock > h3 {
+        margin-top: 32px;
+        margin-bottom: 98px;
+    }
+}
+@media screen and (max-width: 1439px) {
+    .reviews{
+        margin-top: 100px;
+    }
+    
+    .reviewPicture{
+        display: none;
+    }
+    
+    .reviewTextBlock{
+        padding-left: 56px;
+        height: 1024px;
+        flex-grow: 1;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .reviews{
+        margin-top: 100px;
+    }
+    
+    .reviewPicture{
+        display: none;
+    }
+    
+    .reviewTextBlock{
+        padding-left: 45px;
+        height: 628px;
+        flex-grow: 1;
+    }
+    
+    .reviewTextBlock > h1 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+        margin-top: 32px;
+    }
+    
+    .reviewTextBlock > h2 {
+        margin-top: 48px;
+        width: 662px;
+    }
+    
+    .reviewTextBlock > h3 {
+        margin-bottom: 80px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .reviews{
+        margin-top: 50px;
+    }
+    
+    .reviewPicture{
+        display: none;
+    }
+    
+    .reviewTextBlock{
+        padding-left: 16px;
+        height: 680px;
+    }
+    
+    .reviewTextBlock > h1 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+        margin-top: 32px;
+    }
+    
+    .reviewTextBlock > h2 {
+        margin-top: 48px;
+        width: 328px;
+    }
+    
+    .reviewTextBlock > p {
+        width: 328px;
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 24px;
+    }
+    
+    .reviewTextBlock > h3 {
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 24px;
+        margin-bottom: 80px;
+    }
+
+    .reviewSlider{
+        margin-left: 208px;
+        margin-bottom: 32px;
+    }
+}
