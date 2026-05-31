@@ -69,7 +69,10 @@ function garden_scripts() {
     wp_enqueue_style('garden-style', get_template_directory_uri() . "/Garden/dist/main.css", array(), filemtime(get_template_directory() . "/Garden/dist/main.css") );
 
     wp_enqueue_script('garden-script', get_template_directory_uri() . '/Garden/dist/main.js', array(), filemtime(get_template_directory() . "/Garden/dist/main.js"), true);
-    wp_localize_script('garden-script', 'myajax', array('url' => admin_url('admin-ajax.php')));
+    wp_localize_script('garden-script', 'myajax', array(
+        'url'      => admin_url('admin-ajax.php'),
+        'rest_url' => get_rest_url(null, 'goods/'),
+    ));
     
 
 }
@@ -101,6 +104,16 @@ add_action('rest_api_init', function () {
 	register_rest_route('posts', '/parse_posts', array(
         'methods' => 'POST',
         'callback' => 'parse_posts',
+    ));
+    register_rest_route('goods', '/assign_subcategories', array(
+        'methods' => 'GET',
+        'callback' => 'assign_subcategories',
+        'permission_callback' => '__return_true',
+    ));
+    register_rest_route('goods', '/subcategories', array(
+        'methods' => 'GET',
+        'callback' => 'get_subcategories_for_category',
+        'permission_callback' => '__return_true',
     ));
 });
 
@@ -274,25 +287,54 @@ add_action('wp_ajax_nopriv_get_goods_pages', 'get_goods_pages');
 add_action('wp_ajax_get_goods_pages', 'get_goods_pages');
 function get_goods_pages()
 {
+    $subcategory = !empty($_POST['subcategory']) ? sanitize_text_field($_POST['subcategory']) : '';
+
     if (!empty($_POST['category']) && $_POST['category'] !== "none") {
-       $cat = $_POST['category'];
-         $query = new WP_Query(array("post_type" => "product",
-         "post_status" => "publish",
-        'tax_query' => array(
-           array(
-             'taxonomy' => 'product_cat',
-             'field'    => 'term_id',
-             'terms'     =>  $cat, 
-             'operator'  => 'IN'
-             )
-           ),
-        "posts_per_page" => -1) );
-     
+        $cat = $_POST['category'];
+        $args = array(
+            "post_type"      => "product",
+            "post_status"    => "publish",
+            'tax_query'      => array(
+                array(
+                    'taxonomy' => 'product_cat',
+                    'field'    => 'term_id',
+                    'terms'    => $cat,
+                    'operator' => 'IN',
+                )
+            ),
+            "posts_per_page" => -1,
+        );
+        if ($subcategory !== '') {
+            $args['meta_query'] = array(
+                array(
+                    'key'     => 'подкатегория',
+                    'value'   => $subcategory,
+                    'compare' => '=',
+                )
+            );
+        }
+        $query = new WP_Query($args);
         $count = ceil($query->post_count / 12);
     } else {
-         $count = wp_count_posts("product")->publish / 12;
+        if ($subcategory !== '') {
+            $query = new WP_Query(array(
+                "post_type"      => "product",
+                "post_status"    => "publish",
+                "posts_per_page" => -1,
+                'meta_query'     => array(
+                    array(
+                        'key'     => 'подкатегория',
+                        'value'   => $subcategory,
+                        'compare' => '=',
+                    )
+                ),
+            ));
+            $count = ceil($query->post_count / 12);
+        } else {
+            $count = wp_count_posts("product")->publish / 12;
+        }
     }
-     echo json_encode(["status" => "ok", "pages" => $count]);
+    echo json_encode(["status" => "ok", "pages" => $count]);
     wp_die();
 }
 
@@ -301,53 +343,55 @@ add_action('wp_ajax_nopriv_get_goods', 'get_goods');
 add_action('wp_ajax_get_goods', 'get_goods');
 function get_goods()
 {
-        $page = $_POST['page'];
-        
+    $page        = $_POST['page'];
+    $subcategory = !empty($_POST['subcategory']) ? sanitize_text_field($_POST['subcategory']) : '';
+
     if (!empty($_POST['category']) && $_POST['category'] !== "none") {
-       $cat = $_POST['category'];
-       
-       /* $query = new WP_Query(array("post_type" => "product",
-         "post_status" => "publish",
-        'tax_query' => array(
-           array(
-             'taxonomy' => 'product_cat',
-             'field'    => 'term_id',
-             'terms'     =>  $cat, 
-             'operator'  => 'IN'
-             )
-           ),
-        "posts_per_page" => -1) );
-        $count = ceil($query->post_count / 12);*/
-      
-        $args = array("post_type" => "product",
-          "post_status" => "publish",
-        'tax_query' => array(
-               array(
-                 'taxonomy' => 'product_cat',
-                 'field'    => 'term_id',
-                 'terms'     =>  $cat, 
-                 'operator'  => 'IN'
-                 )
-           ),
-       "posts_per_page" => 12, 
-       "paged" => $page,
-       "post_status" => "publish",
-       "orderby" => "title",
-       "order" => "ASC"
-    );
-    } else {
-        $cat = -1;
-        
-        //$query = new WP_Query(array("post_type" => "product", "posts_per_page" => -1) );
-        //$count = ceil($query->post_count / 10);
-      //  $count = wp_count_posts("product")->publish / 12;
-         $args = array("post_type" => "product",
-           "posts_per_page" => 12, 
-           "paged" => $page,
-           "post_status" => "publish",
-           "orderby" => "title",
-           "order" => "ASC"
+        $cat  = $_POST['category'];
+        $args = array(
+            "post_type"      => "product",
+            "post_status"    => "publish",
+            'tax_query'      => array(
+                array(
+                    'taxonomy' => 'product_cat',
+                    'field'    => 'term_id',
+                    'terms'    => $cat,
+                    'operator' => 'IN',
+                )
+            ),
+            "posts_per_page" => 12,
+            "paged"          => $page,
+            "orderby"        => "title",
+            "order"          => "ASC",
         );
+        if ($subcategory !== '') {
+            $args['meta_query'] = array(
+                array(
+                    'key'     => 'подкатегория',
+                    'value'   => $subcategory,
+                    'compare' => '=',
+                )
+            );
+        }
+    } else {
+        $cat  = -1;
+        $args = array(
+            "post_type"      => "product",
+            "posts_per_page" => 12,
+            "paged"          => $page,
+            "post_status"    => "publish",
+            "orderby"        => "title",
+            "order"          => "ASC",
+        );
+        if ($subcategory !== '') {
+            $args['meta_query'] = array(
+                array(
+                    'key'     => 'подкатегория',
+                    'value'   => $subcategory,
+                    'compare' => '=',
+                )
+            );
+        }
     }
     
     if ($_POST['sort'] == "popularity") {
@@ -421,14 +465,16 @@ function get_goods()
                 "price" => $product->get_price()
                 ]];
             $variations = get_field('вариации');
-            foreach($variations as $variation) {
-                $pr = new WC_Product($variation->ID);
-                $var = [
-                    "link" => get_the_permalink($variation->ID),
-                    "name" => get_field('контейнер', $variation->ID),
-                    "price" => $pr->get_price()
-                    ];
+            if (!empty($variations)) {
+                foreach($variations as $variation) {
+                    $pr = new WC_Product($variation->ID);
+                    $var = [
+                        "link" => get_the_permalink($variation->ID),
+                        "name" => get_field('контейнер', $variation->ID),
+                        "price" => $pr->get_price()
+                        ];
                     $good['variations'][] = $var;
+                }
             }
             $good['cult_icons'] = get_field("особенности_культивирования", $product->ID);
             $good['decor_icons'] = get_field("декоративность", $product->ID);
@@ -863,14 +909,16 @@ function search_goods() {
                 "price" => $product->get_price()
                 ]];
             $variations = get_field('вариации');
-            foreach($variations as $variation) {
-                $pr = new WC_Product($variation->ID);
-                $var = [
-                    "link" => get_the_permalink($variation->ID),
-                    "name" => get_field('контейнер', $variation->ID),
-                    "price" => $pr->get_price()
-                    ];
+            if (!empty($variations)) {
+                foreach($variations as $variation) {
+                    $pr = new WC_Product($variation->ID);
+                    $var = [
+                        "link" => get_the_permalink($variation->ID),
+                        "name" => get_field('контейнер', $variation->ID),
+                        "price" => $pr->get_price()
+                        ];
                     $good['variations'][] = $var;
+                }
             }
             $good['cult_icons'] = get_field("особенности_культивирования", $product->get_id());
             $good['decor_icons'] = get_field("декоративность", $product->get_id());
@@ -1548,6 +1596,321 @@ switch ($data->type) {
         echo('ok');
         break;
 }
+}
+
+// -------------------------------------------------------
+// ACF: register подкатегория and тип fields for product group
+// -------------------------------------------------------
+add_action('acf/init', function() {
+    if (!function_exists('acf_add_local_field')) return;
+    acf_add_local_field(array(
+        'key'               => 'field_подкатегория',
+        'label'             => 'Подкатегория',
+        'name'              => 'подкатегория',
+        'type'              => 'text',
+        'parent'            => 'group_648edb7872018',
+        'instructions'      => '',
+        'required'          => 0,
+        'wrapper'           => array('width' => '', 'class' => '', 'id' => ''),
+    ));
+    acf_add_local_field(array(
+        'key'               => 'field_тип',
+        'label'             => 'Тип',
+        'name'              => 'тип',
+        'type'              => 'text',
+        'parent'            => 'group_648edb7872018',
+        'instructions'      => '',
+        'required'          => 0,
+        'wrapper'           => array('width' => '', 'class' => '', 'id' => ''),
+    ));
+});
+
+// -------------------------------------------------------
+// Subcategory auto-assignment
+// -------------------------------------------------------
+
+function get_subcategory_map() {
+    return array(
+        // Верески
+        'Верески' => array(
+            'keywords' => array('Вереск', 'Гаультерия'),
+            'other'    => 'Другие верески',
+        ),
+        // Вьющиеся растения
+        'Вьющиеся растения' => array(
+            'keywords' => array('Актинидия', 'Виноград', 'Клематис', 'Гортензия', 'Древогубец', 'Жимолость'),
+            'other'    => 'Другие вьющиеся растения',
+        ),
+        // Деревья
+        'Деревья' => array(
+            'keywords' => array(
+                'Береза', 'Боярышник', 'Вишня', 'Груша', 'Дуб', 'Ель', 'Ива', 'Клен', 'Липа',
+                'Лиственница', 'Можжевельник', 'Орех', 'Рябина', 'Слива', 'Сосна', 'Туя',
+                'Черемуха', 'Черешня', 'Яблоня',
+                'Айва', 'Алыча', 'Вяз', 'Гледичия', 'Каштан', 'Кедр', 'Пихта', 'Тис', 'Тополь',
+            ),
+            'other'    => 'Другие деревья',
+        ),
+        // Злаки
+        'Злаки' => array(
+            'keywords' => array(
+                'Вейник', 'Мискантус', 'Молиния', 'Осока', 'Овсяница', 'Просо',
+                'Калерия', 'Лисохвост', 'Луговик', 'Полевичка', 'Сеслерия', 'Фалярис', 'Хаконехлоя', 'Элимус',
+            ),
+            'other'    => 'Другие злаки',
+        ),
+        // Кустарники
+        'Кустарники' => array(
+            'keywords' => array(
+                'Азалия', 'Барбарис', 'Бересклет', 'Бузина', 'Вереск', 'Гортензия', 'Дерен', 'Ива',
+                'Калина', 'Кизильник', 'Лаванда', 'Лапчатка', 'Лещина', 'Пузыреплодник',
+                'Рododендрон', 'Роза', 'Сирень', 'Спирея', 'Форзиция', 'Чубушник',
+                'Боярышник', 'Вейгела', 'Рябинник', 'Смородина', 'Снежноягодник', 'Стефанандра',
+            ),
+            'other'    => 'Другие кустарники',
+        ),
+        // Луковичные
+        'Луковичные' => array(
+            'keywords' => array('Аллиум', 'Гиацинт', 'Мускари', 'Нарцисс', 'Тюльпан', 'Крокус'),
+            'other'    => 'Другие луковичные',
+        ),
+        // МАФ
+        'Малые Архитектурные Формы (МАФ)' => array(
+            'keywords' => array(
+                'Бордюр', 'Колышек', 'Ограждение', 'Чаша',
+                'Держатель', 'Мангал', 'Пергола', 'Скамья', 'Фонарь', 'Цветочница',
+            ),
+            'other'    => 'Другие МАФ',
+        ),
+        // Многолетники
+        'Многолетники' => array(
+            'keywords' => array(
+                'Астильба', 'Астра', 'Астранция', 'Барвинок', 'Бузульник', 'Вербейник', 'Вероника',
+                'Гайлардия', 'Гвоздика', 'Гейхера', 'Гейхерелла', 'Гелениум', 'Герань', 'Гортензия',
+                'Дербенник', 'Живучка', 'Ирис', 'Камнеломка', 'Клематис', 'Лаванда', 'Лиатрис',
+                'Лилейник', 'Люпин', 'Очиток', 'Папоротник', 'Пион', 'Посконник', 'Седум',
+                'Тысячелистник', 'Флокс', 'Хоста', 'Эхинацея',
+                'Анафалис', 'Анемона', 'Арабис', 'Бадан', 'Бруннера', 'Василек', 'Василистник',
+                'Вероникаструм', 'Волжанка', 'Гравилат', 'Дармера', 'Иссоп', 'Клопогон',
+                'Колокольчик', 'Котовник', 'Кровохлебка', 'Лабазник', 'Манжетка', 'Медуница',
+                'Монарда', 'Мшанка', 'Нивяник', 'Обриета', 'Пахизандра', 'Рудбекия', 'Солидаго',
+                'Стахис', 'Традесканция', 'Эдельвейс', 'Яснотка',
+            ),
+            'other'    => 'Другие многолетники',
+        ),
+        // Плодовые
+        'Плодовые' => array(
+            'keywords' => array(
+                'Актинидия', 'Вишня', 'Виноград', 'Голубика', 'Груша', 'Ежевика', 'Жимолость',
+                'Клубника', 'Крыжовник', 'Малина', 'Слива', 'Смородина', 'Черешня', 'Яблоня',
+                'Айва', 'Алыча', 'Арония', 'Брусника', 'Дюк', 'Ирга', 'Йошта', 'Калина', 'Клюква',
+                'Лещина', 'Облепиха', 'Ревень', 'Рябина', 'Хеномелес',
+            ),
+            'other'    => 'Другие плодовые',
+        ),
+        // Почвопокровные
+        'Почвопокровные растения' => array(
+            'keywords' => array(
+                'Барвинок', 'Живучка', 'Очиток', 'Седум',
+                'Бересклет', 'Вербейник', 'Иберис', 'Камнеломка', 'Кизильник', 'Молодило', 'Мшанка', 'Флокс', 'Яснотка',
+            ),
+            'other'    => 'Другие почвопокровные',
+        ),
+        // Пряно-ароматические
+        'Пряно-ароматические растения' => array(
+            'keywords' => array('Душица', 'Иссоп', 'Лаванда', 'Мелисса', 'Мята', 'Тимьян', 'Шалфей', 'Эстрагон'),
+            'other'    => 'Другие пряно-ароматические',
+        ),
+        // Растения для прудов
+        'Растения для прудов и водоемов' => array(
+            'keywords' => array('Белокрыльник', 'Дербенник', 'Ирис', 'Ситник'),
+            'other'    => 'Другие растения для прудов',
+        ),
+        // Рododендроны
+        'Рododендроны' => array(
+            'keywords' => array('Рododендрон', 'Азалия'),
+            'other'    => 'Другие рododендроны',
+        ),
+        // Сопутствующие товары
+        'Сопутствующие товары для сада' => array(
+            'keywords' => array(
+                'Грунт', 'Мульча', 'Субстрат', 'Торф', 'Удобрение',
+                'Акварин', 'Азофоска', 'Ведро', 'Геотекстиль', 'Горшок', 'Гумат', 'Дренаж',
+                'Калимагнезия', 'Карбамид', 'Карбофос', 'Кашпо', 'Корзинка', 'Монофосфат',
+                'ОМУ', 'Опора', 'Песок', 'Плодосборник', 'Пуршат', 'РанНет', 'Селитра',
+                'Спанбонд', 'Суперфосфат', 'ФАС', 'Фитоспорин', 'ХОМ', 'Шпагат',
+            ),
+            'other'    => 'Другие сопутствующие товары',
+        ),
+        // Услуги
+        'Услуги' => array(
+            'keywords' => array('Газон', 'Обработка', 'Обслуживание', 'Посадка', 'Уход'),
+            'other'    => 'Другие услуги',
+        ),
+        // Хвойные
+        'Хвойные растения' => array(
+            'keywords' => array(
+                'Ель', 'Лиственница', 'Можжевельник', 'Сосна', 'Туя',
+                'Кипарисовик', 'Микробиота', 'Пихта', 'Тис',
+            ),
+            'other'    => 'Другие хвойные',
+        ),
+    );
+}
+
+// Primary subcategories (count >= 2 needed to remain standalone)
+function get_primary_subcategories() {
+    return array(
+        'Верески'                         => array('Вереск', 'Гаультерия'),
+        'Вьющиеся растения'               => array('Актинидия', 'Виноград', 'Клематис'),
+        'Деревья'                         => array('Береза', 'Боярышник', 'Вишня', 'Груша', 'Дуб', 'Ель', 'Ива', 'Клен', 'Липа', 'Лиственница', 'Можжевельник', 'Орех', 'Рябина', 'Слива', 'Сосна', 'Туя', 'Черемуха', 'Черешня', 'Яблоня'),
+        'Злаки'                           => array('Вейник', 'Мискантус', 'Молиния', 'Осока', 'Овсяница', 'Просо'),
+        'Кустарники'                      => array('Азалия', 'Барбарис', 'Бересклет', 'Бузина', 'Вереск', 'Гортензия', 'Дерен', 'Ива', 'Калина', 'Кизильник', 'Лаванда', 'Лапчатка', 'Лещина', 'Пузыреплодник', 'Рododендрон', 'Роза', 'Сирень', 'Спирея', 'Форзиция', 'Чубушник'),
+        'Луковичные'                      => array('Аллиум', 'Гиацинт', 'Мускари', 'Нарцисс', 'Тюльпан'),
+        'Малые Архитектурные Формы (МАФ)' => array('Бордюр', 'Колышек', 'Ограждение', 'Чаша'),
+        'Многолетники'                    => array('Астильба', 'Астра', 'Астранция', 'Барвинок', 'Бузульник', 'Вербейник', 'Вероника', 'Гайлардия', 'Гвоздика', 'Гейхера', 'Гейхерелла', 'Гелениум', 'Герань', 'Гортензия', 'Дербенник', 'Живучка', 'Ирис', 'Камнеломка', 'Клематис', 'Лаванда', 'Лиатрис', 'Лилейник', 'Люпин', 'Очиток', 'Папоротник', 'Пион', 'Посконник', 'Седум', 'Тысячелистник', 'Флокс', 'Хоста', 'Эхинацея'),
+        'Плодовые'                        => array('Актинидия', 'Вишня', 'Виноград', 'Голубика', 'Груша', 'Ежевика', 'Жимолость', 'Клубника', 'Крыжовник', 'Малина', 'Слива', 'Смородина', 'Черешня', 'Яблоня'),
+        'Почвопокровные растения'         => array('Барвинок', 'Живучка', 'Очиток', 'Седум'),
+        'Пряно-ароматические растения'    => array('Душица', 'Иссоп', 'Лаванда', 'Мелисса', 'Мята', 'Тимьян', 'Шалфей'),
+        'Растения для прудов и водоемов'  => array(),
+        'Рododендроны'                    => array('Рododендрон'),
+        'Сопутствующие товары для сада'   => array('Грунт', 'Мульча', 'Субстрат', 'Торф', 'Удобрение'),
+        'Услуги'                          => array('Газон'),
+        'Хвойные растения'                => array('Ель', 'Лиственница', 'Можжевельник', 'Сосна', 'Туя'),
+    );
+}
+
+function normalize_e($str) {
+    return str_replace('ё', 'е', mb_strtolower($str, 'UTF-8'));
+}
+
+function match_keyword_in_title($title, $keywords) {
+    $title_norm = normalize_e($title);
+    // Sort keywords by length desc so longer matches win
+    usort($keywords, function($a, $b) { return mb_strlen($b, 'UTF-8') - mb_strlen($a, 'UTF-8'); });
+    foreach ($keywords as $kw) {
+        $kw_norm = normalize_e($kw);
+        // Match keyword at the start of the title (word boundary)
+        if (mb_strpos($title_norm, $kw_norm, 0, 'UTF-8') === 0) {
+            return $kw;
+        }
+    }
+    return null;
+}
+
+function assign_subcategories($request) {
+    $map      = get_subcategory_map();
+    $primary  = get_primary_subcategories();
+    $dry_run  = $request->get_param('dry_run') ? true : false;
+
+    // Step 1: collect all products with their categories and match keywords
+    $products = get_posts(array(
+        'post_type'      => 'product',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'fields'         => 'ids',
+    ));
+
+    // Build per-category keyword counts first (to apply "Другие" rule)
+    // Structure: $counts[cat_name][keyword] = count
+    $counts   = array();
+    $matches  = array(); // $matches[post_id] = ['cat' => ..., 'keyword' => ...]
+
+    foreach ($products as $post_id) {
+        $terms = get_the_terms($post_id, 'product_cat');
+        if (empty($terms) || is_wp_error($terms)) continue;
+        $cat_name = $terms[0]->name;
+        if (!isset($map[$cat_name])) continue;
+
+        $title   = get_the_title($post_id);
+        $keyword = match_keyword_in_title($title, $map[$cat_name]['keywords']);
+        if ($keyword === null) $keyword = '__nomatch__';
+
+        if (!isset($counts[$cat_name])) $counts[$cat_name] = array();
+        if (!isset($counts[$cat_name][$keyword])) $counts[$cat_name][$keyword] = 0;
+        $counts[$cat_name][$keyword]++;
+        $matches[$post_id] = array('cat' => $cat_name, 'keyword' => $keyword);
+    }
+
+    // Step 2: determine which keywords are standalone (>= 2 products) vs "Другие"
+    $standalone = array(); // $standalone[cat_name][keyword] = true/false
+    foreach ($counts as $cat_name => $kw_counts) {
+        $standalone[$cat_name] = array();
+        $primary_kws = isset($primary[$cat_name]) ? $primary[$cat_name] : array();
+        foreach ($kw_counts as $kw => $cnt) {
+            if ($kw === '__nomatch__') {
+                $standalone[$cat_name][$kw] = false;
+                continue;
+            }
+            // Standalone only if keyword is in primary list AND count >= 2
+            $is_primary = in_array($kw, $primary_kws);
+            $standalone[$cat_name][$kw] = ($is_primary && $cnt >= 2);
+        }
+    }
+
+    // Step 3: assign fields
+    $updated = 0;
+    $log     = array();
+    foreach ($matches as $post_id => $info) {
+        $cat_name = $info['cat'];
+        $keyword  = $info['keyword'];
+        $other    = $map[$cat_name]['other'];
+
+        $тип          = ($keyword === '__nomatch__') ? '' : $keyword;
+        $подкатегория = ($keyword !== '__nomatch__' && !empty($standalone[$cat_name][$keyword]))
+            ? $keyword
+            : $other;
+
+        if (!$dry_run) {
+            update_post_meta($post_id, 'подкатегория', $подкатегория);
+            update_post_meta($post_id, 'тип', $тип);
+            // ACF reference keys so get_field() resolves correctly
+            update_post_meta($post_id, '_подкатегория', 'field_подкатегория');
+            update_post_meta($post_id, '_тип', 'field_тип');
+        }
+        $log[] = array(
+            'id'          => $post_id,
+            'title'       => get_the_title($post_id),
+            'cat'         => $cat_name,
+            'тип'         => $тип,
+            'подкатегория'=> $подкатегория,
+        );
+        $updated++;
+    }
+
+    return new WP_REST_Response(array(
+        'status'   => 'ok',
+        'dry_run'  => $dry_run,
+        'updated'  => $updated,
+        'products' => $log,
+    ), 200);
+}
+
+function get_subcategories_for_category($request) {
+    $category_id = intval($request->get_param('category_id'));
+    if (!$category_id) {
+        return new WP_REST_Response(array('status' => 'error', 'message' => 'category_id required'), 400);
+    }
+
+    global $wpdb;
+    $subcategories = $wpdb->get_col($wpdb->prepare(
+        "SELECT DISTINCT pm.meta_value
+         FROM {$wpdb->postmeta} pm
+         INNER JOIN {$wpdb->term_relationships} tr ON tr.object_id = pm.post_id
+         INNER JOIN {$wpdb->term_taxonomy} tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
+         WHERE pm.meta_key = 'подкатегория'
+           AND pm.meta_value != ''
+           AND tt.taxonomy = 'product_cat'
+           AND tt.term_id = %d
+         ORDER BY pm.meta_value ASC",
+        $category_id
+    ));
+
+    return new WP_REST_Response(array(
+        'status'        => 'ok',
+        'category_id'   => $category_id,
+        'subcategories' => $subcategories,
+    ), 200);
 }
 
 // New order notification only for "Pending" Order status
