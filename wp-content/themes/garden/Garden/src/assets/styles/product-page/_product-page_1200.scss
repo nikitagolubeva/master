@@ -1,0 +1,105 @@
+.product-page {
+    .catalog-categories {
+        display: block;
+    }
+    &__info {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    &__container {
+        flex-direction: column;
+        row-gap: 32px;
+    }
+
+    .tabs {
+        &__header {
+            &__item {
+                &:not(:first-of-type) {
+                    padding-left: 20px;
+                }
+
+                &:not(:last-of-type) {
+                    padding-right: 20px;
+                }
+            }
+
+            .swiper-slide {
+                &:not(:first-of-type) {
+                    .tabs__header__item {
+                        padding-left: 20px;
+                    }
+                }
+
+                &:not(:last-of-type) {
+                    .tabs__header__item {
+                        padding-right: 20px;
+                    }
+                }
+
+                &:last-of-type {
+                    .tabs__header__item {
+                        padding-right: 25px;
+                    }
+                }
+            }
+        }
+
+        .zone-container {
+            .temp-item {
+                margin-top: 13px;
+
+                &:first-of-type {
+                    margin-top: 7px;
+                }
+            }
+            &__img-container {
+                border: 4px solid var(--bw4);
+                padding: 8px 45px;
+            }
+
+            &__img {
+                width: 447.107px;
+                height: 519.277px;
+                object-fit: cover;
+            }
+        }
+
+        .conventions-block {
+            column-gap: 18px;
+
+            &__big-container {
+                column-gap: 18px;
+            }
+
+            .convention-item {
+                width: 234px;
+
+                &__img {
+                    width: 32px;
+                    height: 32px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+.product-slider {
+    width: 100%;
+    height: 100%;
+
+    .swiper-slide {
+        width: 240px;
+    }
+}
+
+.advantages {
+    margin-top: var(--var-100);
+
+    // display: grid;
+    // grid-template-columns: max-content max-content;
+    // justify-content: center;
+    // row-gap: 56px;
+    // column-gap: 300px;
+}

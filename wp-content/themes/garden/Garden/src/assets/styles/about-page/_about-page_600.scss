@@ -1,0 +1,15 @@
+.about-page {
+    .landscape-section {
+        display: none;
+    }
+
+    .advantages {
+        grid-template-columns: 1fr;
+
+        column-gap: 0;
+    }
+
+    .services-section {
+        margin-top: 50px;
+    }
+}

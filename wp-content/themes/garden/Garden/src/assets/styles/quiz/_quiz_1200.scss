@@ -1,0 +1,28 @@
+.quiz-block {
+    margin-left: 16px;
+    .quiz-step {
+        &__header {
+            margin-right: 16px;
+            align-items: flex-start;
+        }
+    }
+
+    .final {
+        p {
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+
+    .swiper-scrollbar {
+        width: calc(100% - 16px);
+    }
+
+    &__buttons {
+        padding-right: 16px;
+    }
+
+    .size-slider {
+        padding-right: 16px;
+    }
+}

@@ -1,0 +1,27 @@
+.about-block {
+    &__img {
+        margin-left: 30px;
+    }
+
+    &__bg-img {
+        &.wine {
+            bottom: -47px;
+            right: 0;
+        }
+
+        &.stick {
+            top: -128px;
+            right: 10px;
+        }
+
+        &.berries {
+            bottom: 0;
+            left: -120px;
+        }
+
+        &.currant {
+            top: -20px;
+            left: 0;
+        }
+    }
+}

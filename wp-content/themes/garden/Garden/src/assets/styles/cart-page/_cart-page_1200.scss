@@ -1,0 +1,12 @@
+.cart-page {
+    &__container {
+        flex-direction: column;
+    }
+
+    &__info {
+        margin-left: 0;
+
+        margin-top: 64px;
+        min-width: 0;
+    }
+}

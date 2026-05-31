@@ -1,0 +1,39 @@
+.side-bar {
+    padding: 30px 245px 0 60px;
+
+    transition: transform 0.6s ease-in-out;
+
+    &__search {
+        margin-top: 30px;
+    }
+
+    &__nav {
+        margin-top: 24px;
+
+        row-gap: 18px;
+
+        padding-bottom: 24px;
+
+        &.first {
+            margin-top: 18px;
+        }
+
+        a {
+            column-gap: 8px;
+            svg {
+                flex-shrink: 0;
+            }
+
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 24px; /* 120% */
+        }
+    }
+    &__media {
+        margin-top: 24px;
+    }
+
+    &.active {
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,28 @@
+.requisites-page {
+    .requisites-grid {
+        margin-top: 20px;
+
+        display: grid;
+        grid-template-columns: minmax(100px, 500px) 1fr;
+        column-gap: 60px;
+        row-gap: 24px;
+    }
+
+    .second-header {
+        margin-top: 24px;
+    }
+
+    .requisites-item {
+        &__label {
+            font-size: 16px;
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+    }
+
+    .requisites-button {
+        margin-top: 60px;
+    }
+}

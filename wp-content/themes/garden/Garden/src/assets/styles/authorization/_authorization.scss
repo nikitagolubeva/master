@@ -1,0 +1,339 @@
+.authorization-wrapper {
+  .popup-container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    max-width: 1000px;
+    min-height: 540px;
+
+    padding: 24px 40px;
+
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      opacity 0.6s,
+      visibility 0.6s;
+
+    background: var(--bw6);
+
+    &__cross-block {
+      position: absolute;
+
+      right: 40px;
+      top: 34px;
+
+      z-index: 25;
+
+      cursor: pointer;
+
+      svg {
+        path {
+          fill: var(--logo-fill);
+
+          transition: fill 0.3s;
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            fill: red;
+          }
+        }
+      }
+    }
+
+    &__back-btn {
+      position: absolute;
+
+      left: 40px;
+      top: 34px;
+
+      z-index: 25;
+
+      cursor: pointer;
+
+      display: flex;
+      column-gap: 4px;
+      align-items: center;
+      background-color: transparent;
+
+      svg {
+        transition: transform 0.3s;
+      }
+
+      span {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+
+      &:hover {
+        svg {
+          transform: translateX(-5px);
+        }
+      }
+    }
+
+    .code-container {
+      margin-top: 16px;
+
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+
+      position: relative;
+
+      input {
+        width: 48px;
+
+        padding: 10px;
+
+        font-family: "Manrope", sans-serif;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+        font-size: 24px;
+        line-height: 40px;
+        color: var(--bw0);
+
+        background-color: var(--code-bg);
+        border-radius: 4px;
+
+        border: 1px solid transparent;
+
+        transition: all 0.3s;
+
+        text-align: center;
+
+        &:focus {
+          border-color: var(--bw0);
+        }
+      }
+
+      &::after {
+        font-weight: 400;
+
+        color: rgb(221, 0, 0);
+
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+
+        content: "Заполните код.";
+
+        opacity: 0;
+
+        transform: translateX(-50%) translateY(0px);
+
+        transition:
+          transform 0.5s,
+          opacity 0.5s,
+          bottom 0.5s;
+      }
+
+      &.warning {
+        input {
+          border-color: rgb(221, 0, 0);
+        }
+        &::after {
+          opacity: 1;
+          bottom: -23px;
+        }
+      }
+      &.error {
+        input {
+          border-color: rgb(221, 0, 0);
+        }
+        &::after {
+          content: "Неверный код.";
+        }
+      }
+    }
+  }
+
+  .popup-block {
+    width: 100%;
+    max-width: 400px;
+
+    &.big {
+      max-width: 640px;
+    }
+
+    &.success-change {
+      padding-top: 64px;
+      svg {
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    z-index: 10;
+    display: none;
+    transition:
+      opacity 0.3s,
+      visibility 0.3s;
+
+    .input-container:not(:first-child) {
+      margin-top: 24px;
+    }
+
+    .input-container {
+      @include text-input(var(--bw0), var(--bw0), var(--bw1), (16px 24px), var(--bw3), 0, var(--bw0), none, 12px);
+      input {
+        background-color: var(--input-bg);
+      }
+    }
+
+    .text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      color: var(--bw0);
+      text-align: center;
+    }
+
+    .note-text {
+      margin-top: 24px;
+
+      background-color: var(--bw4);
+      border-radius: 4px;
+      padding: 10px;
+    }
+
+    &__header {
+      margin-bottom: 40px;
+
+      h3 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+        color: var(--bw0);
+        text-align: center;
+      }
+
+      p {
+        // @extend %text16-400;
+        color: #4f4f4f;
+        text-align: center;
+
+        margin-top: 8px;
+      }
+    }
+
+    &__forget-password {
+      display: block;
+
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      color: var(--secondary);
+
+      background-color: transparent;
+
+      margin-left: auto;
+
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--secondary-black);
+      }
+    }
+
+    &__bottom {
+      margin-top: 32px;
+
+      display: flex;
+      flex-direction: column;
+
+      &__btn {
+        @extend %green-btn;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+
+      &__container {
+        margin-top: 24px;
+      }
+
+      &__text {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        color: var(--secondary);
+        background-color: transparent;
+        display: block;
+        margin: 0 auto;
+
+        transition: color 0.3s;
+
+        &:hover {
+          color: var(--secondary-black);
+        }
+      }
+
+      .to-recovery-btn {
+        margin-top: 8px;
+      }
+    }
+
+    .back-btn {
+      margin-top: 10px;
+
+      margin-left: 5px;
+
+      cursor: pointer;
+
+      transition: transform 0.3s ease-in;
+
+      &:hover {
+        transform: translateX(-5px);
+      }
+    }
+
+    .recovery-subtext {
+      margin-top: 20px;
+
+      font-weight: 400;
+      // color: $text-color;
+    }
+
+    &.active {
+      //visibility: visible;
+
+      display: block;
+
+      z-index: 20;
+      position: relative;
+    }
+  }
+}
+
+.authorization-page-3,
+.authorization-page-4,
+.authorization-page-5 {
+  .to-login-btn {
+    margin-top: 8px;
+  }
+}
+
+.authorization-wrapper.popup-shown {
+  z-index: 100;
+  opacity: 1;
+  visibility: visible;
+  .popup-container {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.authorization-button {
+  cursor: pointer;
+}

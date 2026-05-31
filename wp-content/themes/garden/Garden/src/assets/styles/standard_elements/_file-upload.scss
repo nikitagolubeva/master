@@ -1,0 +1,107 @@
+.upload-block {
+  position: relative;
+
+  width: 100%;
+
+  z-index: 0;
+
+  .mobile-svg {
+    display: none;
+  }
+
+  .mobile-text {
+    display: none;
+  }
+
+  &__label {
+    width: 100%;
+
+    padding: 20px 0 16px;
+
+    background: #f8f8f8;
+    border: 1px solid #e9e9e9;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: pointer;
+
+    &__text {
+      margin-top: 12px;
+
+      @extend %text16-500;
+      color: $text-color;
+      text-align: center;
+    }
+
+    &__subtext {
+      @extend %text14-400;
+      color: $B7;
+      text-align: center;
+
+      margin-top: 4px;
+    }
+  }
+
+  &.drag {
+    .upload-block__label {
+      background: #dddddd;
+      border: 1px solid #cccccc;
+    }
+  }
+
+  &__input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    position: absolute;
+    z-index: -10;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .upload-block {
+    .mobile-svg {
+      display: block;
+    }
+
+    .dekstop-svg {
+      display: none;
+    }
+
+    .mobile-text {
+      display: inline !important;
+    }
+
+    &__label {
+      width: 100%;
+
+      padding: 2px 0;
+
+      background: transparent;
+      border: none;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 4px;
+
+      cursor: pointer;
+
+      &__text {
+        margin-top: 0;
+
+        color: $main-color;
+        text-align: left;
+
+        display: none;
+      }
+
+      &__subtext {
+        display: none;
+        margin-top: 4px;
+      }
+    }
+  }
+}

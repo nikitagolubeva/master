@@ -1,0 +1,19 @@
+<?php
+require_once "assets/views/pages/main.php";
+//require_once "assets/views/pages/catalog.php";
+//require_once "assets/views/pages/product-page.php";
+//require_once "assets/views/pages/cart.php";
+//require_once "assets/views/pages/order.php";
+//require_once "assets/views/pages/contacts.php";
+//require_once "assets/views/pages/about-page.php";
+//require_once "assets/views/pages/landscape-page.php";
+//require_once "assets/views/pages/service-page.php";
+//require_once "assets/views/pages/delivery-info.php";
+//require_once "assets/views/pages/blog-page.php";
+//require_once "assets/views/pages/single-blog.php";
+//require_once "assets/views/pages/account-profile.php";
+//require_once "assets/views/pages/account-orders.php";
+//require_once "assets/views/pages/account-password.php";
+//require_once "assets/views/pages/favorite-page.php";
+//require_once "assets/views/pages/404.php";
+//require_once "assets/views/pages/requisites.php";

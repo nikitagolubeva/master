@@ -1,0 +1,99 @@
+.landscape-page {
+    .feedback-block {
+        margin-top: 100px;
+    }
+
+    .first-block {
+        margin-top: -70px;
+
+        padding-top: 170px;
+        padding-bottom: 60px;
+
+        position: relative;
+        width: 100%;
+
+        &__title {
+            display: block;
+
+            width: 464px;
+            height: auto;
+
+            object-fit: contain;
+
+            margin: 40px auto 0;
+        }
+
+        &__text {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 40px;
+
+            span {
+                display: none;
+            }
+        }
+
+        &__mobile-text {
+            display: none;
+        }
+
+        &__button {
+            margin: 24px auto 0;
+        }
+    }
+}
+
+.stage-section {
+    &__container {
+        margin-top: 48px;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 40px;
+        row-gap: 40px;
+    }
+}
+
+.prework-section {
+    padding: 0 16px;
+    &__header {
+        text-align: left;
+    }
+    &__container {
+        max-width: 100%;
+    }
+
+    .prework-item {
+        &__header {
+            text-align: center;
+
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 24px;
+        }
+        &__prices {
+            max-width: 100%;
+        }
+    }
+}
+
+.project-section {
+    &__header {
+        padding-left: 16px;
+    }
+    .project-item {
+        padding-left: 16px;
+        &__info {
+            display: none;
+            height: 100%;
+        }
+
+        .info-slide {
+            display: block;
+
+            .project-item__info {
+                display: flex;
+            }
+        }
+    }
+}

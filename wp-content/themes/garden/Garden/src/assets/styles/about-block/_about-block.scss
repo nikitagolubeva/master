@@ -1,0 +1,99 @@
+.about-block {
+    padding-top: var(--var-100);
+    padding-bottom: var(--var-100);
+
+    position: relative;
+
+    overflow: hidden;
+
+    &__container {
+        display: flex;
+    }
+
+    &__info {
+        width: 100%;
+    }
+
+    &__header {
+        @extend %H1;
+        color: var(--bw0);
+    }
+
+    &__desc {
+        margin-top: var(--var-24);
+        @extend %text-normal;
+        color: var(--bw0);
+    }
+
+    &__grid {
+        margin-top: var(--var-24);
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        column-gap: 24px;
+        row-gap: 12px;
+
+        padding-right: 60px;
+    }
+
+    .about-item {
+        display: flex;
+        align-items: center;
+
+        &__number {
+            color: var(--secondary);
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 80px;
+        }
+
+        &__text {
+            @extend %text-normal;
+            color: var(--bw0);
+
+            margin-left: 16px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+
+        margin-left: 95px;
+        margin-top: 20px;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+    &__bg-img {
+        position: absolute;
+
+        z-index: -1;
+
+        &.wine {
+            bottom: 0;
+            right: -60px;
+        }
+
+        &.stick {
+            top: -110px;
+            right: 170px;
+        }
+
+        &.berries {
+            bottom: 0;
+            left: -120px;
+        }
+
+        &.currant {
+            top: -20px;
+            left: 0;
+        }
+    }
+}

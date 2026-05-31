@@ -1,0 +1,25 @@
+.prework-section {
+    .prework-item {
+        flex-direction: column;
+
+        width: 100%;
+
+        &__img {
+            width: 100%;
+        }
+
+        &__info {
+            padding: 32px;
+
+            max-width: 612px;
+        }
+
+        &__bottom {
+            justify-content: center;
+        }
+
+        &__prices {
+            max-width: 440px;
+        }
+    }
+}

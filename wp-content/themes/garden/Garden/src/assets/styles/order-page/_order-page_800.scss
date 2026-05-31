@@ -1,0 +1,37 @@
+.order-page {
+    &__form {
+        .form-row {
+            flex-direction: column;
+            row-gap: 24px;
+            max-width: 100%;
+
+            .input-container {
+                &:not(:first-child) {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .delivery-page {
+            > div {
+                max-width: 100%;
+            }
+        }
+
+        .name-input {
+            max-width: 100%;
+        }
+    }
+    &__info {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 16px;
+    }
+
+    .payment-block {
+        .payment-method {
+            max-width: 100%;
+        }
+    }
+}

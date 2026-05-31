@@ -1,0 +1,42 @@
+.product-page {
+    .tabs {
+        &__header {
+            &__item {
+                padding-right: 15px;
+            }
+
+            .swiper-slide {
+                &:not(:first-of-type) {
+                    .tabs__header__item {
+                        padding-left: 11px;
+                    }
+                }
+
+                &:not(:last-of-type) {
+                    .tabs__header__item {
+                        padding-right: 53px;
+                    }
+                }
+
+                &:last-of-type {
+                    .tabs__header__item {
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+
+        .conventions-block {
+            column-gap: 20px;
+
+            &__big-container {
+                column-gap: 20px;
+            }
+        }
+    }
+}
+.product-slider {
+    .swiper-slide {
+        width: 250px;
+    }
+}

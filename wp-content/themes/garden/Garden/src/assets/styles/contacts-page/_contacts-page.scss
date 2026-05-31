@@ -1,0 +1,115 @@
+.contacts-page {
+    margin-top: var(--var-32);
+
+    &__header {
+        @extend %subheader;
+    }
+
+    .phones-block {
+        margin-top: var(--var-24);
+    }
+
+    .phone-item {
+        &__phone {
+            @extend %body-large;
+            color: var(--bw0);
+
+            &:hover {
+                color: var(--secondary);
+            }
+        }
+
+        &__name {
+            @extend %text-normal;
+            color: var(--bw0);
+            margin-left: 12px;
+        }
+
+        &:not(:first-child) {
+            margin-top: 16px;
+        }
+    }
+
+    .addresses-block {
+        margin-top: var(--var-60);
+
+        display: grid;
+        column-gap: var(--var-60);
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .link {
+        margin-top: 24px;
+
+        @extend %link;
+    }
+
+    .address-item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        &__header {
+            color: var(--bw0);
+            font-size: 32px;
+            line-height: 40px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        &__line {
+            margin-top: 32px;
+
+            &:first-child {
+                margin-top: 24px;
+            }
+
+            svg {
+                flex-shrink: 0;
+            }
+
+            display: flex;
+            align-items: center;
+        }
+
+        &__address-line {
+            align-items: center;
+        }
+
+        &__text {
+            margin-left: 8px;
+
+            @extend %body-large;
+            color: var(--bw0);
+
+            > a {
+                @extend %body-large;
+                color: var(--bw0);
+
+                &:hover {
+                    color: var(--secondary);
+                }
+            }
+        }
+
+        &__contacts {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__info {
+            margin-bottom: 40px;
+        }
+
+        &__map {
+            margin-top: auto;
+
+            width: 100%;
+        }
+
+        &__btn {
+            display: none;
+        }
+    }
+}

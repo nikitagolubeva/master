@@ -1,0 +1,37 @@
+%green-btn {
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--bw5);
+
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    border-radius: 2px;
+
+    background-color: var(--secondary);
+
+    padding: 14px 12px 14px 16px;
+
+    transition:
+        opacity 0.3s,
+        background-color 0.3s;
+
+    svg {
+        margin-left: 4px;
+    }
+
+    &:hover {
+        background-color: #1e8415;
+    }
+
+    &.disabled {
+        opacity: 1;
+        background-color: #a7cca3;
+    }
+}

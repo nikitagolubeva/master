@@ -1,0 +1,186 @@
+@mixin text-input(
+  $text-color,
+  $label-color,
+  $placeholder-color,
+  $padding,
+  $border-color,
+  $border-radius,
+  $focus-color,
+  $max-width,
+  $label-margin
+) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @extend %input-font;
+  color: $text-color;
+
+  max-width: $max-width;
+
+  label {
+    margin-bottom: $label-margin;
+    color: $label-color;
+  }
+
+  input {
+    width: 100%;
+
+    padding: $padding;
+
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+
+    transition: border 0.3s;
+
+    @extend %input-font;
+
+    &::placeholder {
+      @extend %input-font;
+      color: $placeholder-color;
+    }
+
+    &:focus {
+      border-color: $focus-color;
+    }
+  }
+
+  .show-password {
+    position: absolute;
+
+    bottom: 20px;
+    right: 24px;
+
+    cursor: pointer;
+
+    path {
+      transition:
+        fill 0.3s,
+        stroke 0.3s;
+    }
+
+    &:hover {
+      path {
+        stroke: var(--secondary-light);
+      }
+    }
+
+    &.password-shown {
+      path {
+        stroke: var(--secondary);
+      }
+    }
+  }
+
+  &::after {
+    font-weight: 400;
+
+    font-size: 16px;
+    line-height: 20px;
+
+    color: rgb(221, 0, 0);
+
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+
+    content: "Заполните это поле.";
+
+    opacity: 0;
+
+    transform: translateY(0px);
+
+    transition:
+      transform 0.5s,
+      opacity 0.5s,
+      bottom 0.5s;
+  }
+
+  &.warning {
+    input {
+      border: 1px solid rgb(221, 0, 0);
+    }
+    textarea {
+    }
+    &::after {
+      opacity: 0;
+      bottom: 0;
+    }
+  }
+
+  &.show-text{
+    &::after {
+      opacity: 1;
+      bottom: -28px;
+    }
+  }
+
+  &.passwords-not-equal {
+    &::after {
+      content: "Пароли не совпадают";
+    }
+  }
+
+  &.wrong-email {
+    &::after {
+      content: "Неверный email";
+    }
+  }
+
+  &.email-exist {
+    &::after {
+      content: "Email уже зарегистрирован";
+    }
+  }
+
+  &.email-not-exist {
+    &::after {
+      content: "Email не зарегистрирован";
+    }
+  }
+
+  &.wrong-file {
+    &::after {
+      content: "Выберите файл";
+    }
+  }
+
+  &.wrong-code {
+    &::after {
+      content: "Неверный код";
+    }
+  }
+
+  &.wrong-login {
+    &::after {
+      content: "Неверный логин и/или пароль";
+    }
+  }
+
+  &.wrong-password {
+    &::after {
+      content: "Неверный пароль";
+    }
+  }
+
+  &.rating-validate-container {
+    &::after {
+      content: "Укажите рейтинг";
+    }
+  }
+
+  &.success {
+    input {
+      border-color: rgb(19, 141, 19);
+    }
+  }
+}
+
+input[type="password"] {
+  letter-spacing: 3px;
+
+  &::placeholder {
+    letter-spacing: 0.1px;
+  }
+}

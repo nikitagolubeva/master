@@ -1,0 +1,9 @@
+.js-header-filter-item {
+    transition: background-color 0.3s;
+    &:hover {
+        background-color: $main-color-hover;
+    }
+}
+
+
+

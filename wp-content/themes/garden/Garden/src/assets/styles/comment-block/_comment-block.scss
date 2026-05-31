@@ -1,0 +1,131 @@
+.comment-block {
+    //margin-top: var(--var-100);
+
+    display: flex;
+    &__left {
+        width: 45%;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: left;
+    }
+
+    &__right {
+        position: relative;
+
+        width: 55%;
+        padding: 72px 0 32px 80px;
+
+        background-color: var(--secondary);
+    }
+
+    &__header {
+        @extend %H1;
+        color: var(--bw5);
+    }
+
+    &__quotes {
+        position: absolute;
+        width: 213px;
+        height: 213px;
+        object-fit: contain;
+
+        top: 60px;
+        left: 584px;
+
+        z-index: 2;
+    }
+
+    &__comments {
+        margin-top: 46px;
+
+        min-height: 400px;
+
+        .swiper-slide {
+            height: 100%;
+        }
+
+        // .swiper-slide {
+        //     opacity: 0 !important;
+        // }
+
+        // .swiper-slide-active {
+        //     opacity: 1 !important;
+        // }
+    }
+
+    .comment-slider {
+        height: 100%;
+    }
+
+    .comment-item {
+        max-width: 662px;
+        background-color: var(--secondary);
+        height: 100%;
+
+        &__header {
+            @extend %H2;
+            color: var(--bw5);
+            max-width: 490px;
+        }
+
+        &__text {
+            margin-top: var(--var-32);
+
+            @extend %text-normal;
+            color: var(--bw5);
+        }
+
+        &__author {
+            margin-top: 32px;
+
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 24px;
+            color: var(--bw5);
+        }
+    }
+
+    &__buttons {
+        margin-top: var(--var-100);
+
+        display: flex;
+        align-items: center;
+
+        .swiper-button-disabled {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        &__btn {
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+
+            &:not(:first-of-type) {
+                margin-left: 24px;
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+
+                rect {
+                    transition: fill 0.3s;
+                }
+            }
+
+            &:hover {
+                svg {
+                    rect {
+                        fill: rgba(255, 255, 255, 0.726);
+                    }
+                }
+            }
+        }
+    }
+}

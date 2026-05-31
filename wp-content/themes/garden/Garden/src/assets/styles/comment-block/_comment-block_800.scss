@@ -1,0 +1,19 @@
+.comment-block {
+    &__right {
+        padding: 32px 60px 32px 45px;
+    }
+    &__quotes {
+        display: none;
+    }
+
+    &__buttons {
+        margin-top: 50px;
+    }
+
+    .comment-item {
+        &__header {
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+}

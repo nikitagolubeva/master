@@ -1,0 +1,11 @@
+.product-card {
+    &__img-container {
+        height: 240px;
+    }
+
+    &__buy-now {
+        span {
+            display: none;
+        }
+    }
+}

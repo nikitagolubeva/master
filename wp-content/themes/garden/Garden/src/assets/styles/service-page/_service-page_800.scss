@@ -1,0 +1,39 @@
+.service-page {
+    &__name {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 40px; /* 125% */
+        text-transform: uppercase;
+    }
+    .service-info {
+        flex-direction: column;
+        row-gap: 24px;
+
+        &__download-link {
+            max-width: 328px;
+        }
+    }
+
+    .desc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .prices-section {
+        &__container {
+            margin-top: var(--var-48);
+
+            grid-template-columns: repeat(2, 312px);
+            row-gap: 32px;
+        }
+    }
+}
+
+.single-pack-slider {
+    .swiper-scrollbar {
+        width: calc(100% - 16px);
+    }
+}

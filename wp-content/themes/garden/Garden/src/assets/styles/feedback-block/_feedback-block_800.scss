@@ -1,0 +1,45 @@
+.feedback-block {
+    position: relative;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    &__left {
+        padding-left: 0;
+
+        align-items: center;
+        text-align: center;
+
+        padding-top: 32px;
+
+        h3 {
+            max-width: 100%;
+        }
+
+        p {
+            max-width: 100%;
+        }
+    }
+
+    &__right {
+        padding: 80px 0 32px;
+        position: static;
+
+        width: 100%;
+
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    &__btn {
+        margin-top: 32px;
+    }
+
+    .status-sended {
+        padding-left: 0;
+
+        padding-top: 80px;
+    }
+}

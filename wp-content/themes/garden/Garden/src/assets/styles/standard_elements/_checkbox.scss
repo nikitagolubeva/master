@@ -1,0 +1,68 @@
+@mixin checkbox($size, $bg-color, $border-color, $border-radius, $align-items, $box-margin, $gap) {
+    position: relative;
+
+    input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        z-index: -1;
+        opacity: 0;
+    }
+    input:checked + label::before {
+        background-color: $bg-color;
+        background-image: url("resourses/check.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 9px 7px;
+    }
+    label {
+        display: flex;
+        gap: $gap;
+        align-items: align-items;
+
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            width: $size;
+            height: $size;
+            display: block;
+            border: 1px solid $border-color;
+            border-radius: $border-radius;
+
+            margin-top: $box-margin;
+
+            flex-shrink: 0;
+
+            transition: background-color 0.3s, border 0.3s;
+        }
+    }
+    &::after {
+        color: rgb(221, 0, 0);
+
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+
+        content: "Подтвердите согласие";
+
+        z-index: -1;
+
+        opacity: 0;
+
+        transform: translateY(0px);
+
+        transition: transform 0.5s, opacity 0.5s, bottom 0.5s;
+    }
+    &.warning {
+        &::after {
+            opacity: 1;
+            bottom: -23px;
+        }
+        label {
+            &::before {
+                border-color: rgb(221, 0, 0);
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.feedback-block {
+    &__left {
+        padding-left: 0;
+
+        align-items: flex-start;
+        text-align: left;
+
+        padding-top: 32px;
+
+        h3 {
+            max-width: 100%;
+        }
+
+        p {
+            max-width: 100%;
+            margin-top: 32px;
+        }
+    }
+
+    &__right {
+        padding: 72px 0 32px;
+        position: static;
+
+        width: 100%;
+
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    &__btn {
+        margin-top: 24px;
+    }
+}

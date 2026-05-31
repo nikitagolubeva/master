@@ -1,0 +1,99 @@
+.landscape-page {
+    .first-block {
+        margin-top: -91px;
+
+        padding-top: 220px;
+        padding-bottom: 70px;
+
+        position: relative;
+        width: 100%;
+
+        &__title {
+            display: block;
+
+            width: 618px;
+            height: auto;
+
+            object-fit: contain;
+
+            margin: 90px auto 0;
+        }
+
+        &__text {
+            font-weight: 600;
+            span {
+                display: none;
+            }
+        }
+
+        &__mobile-text {
+            display: none;
+        }
+
+        &__button {
+            margin: 40px auto 0;
+        }
+    }
+}
+
+.stage-section {
+    &__header {
+        text-align: left;
+    }
+
+    &__container {
+        margin-top: 48px;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 40px;
+        row-gap: 40px;
+    }
+
+    .stage-item {
+        width: 100%;
+    }
+}
+
+.choose-pack-section {
+    padding: 0 16px;
+}
+
+.prework-section {
+    &__container {
+        flex-direction: column;
+        row-gap: 24px;
+
+        max-width: 676px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .prework-item {
+        flex-direction: column;
+
+        width: 100%;
+
+        &__info {
+            padding: 32px;
+
+            max-width: 100%;
+        }
+
+        &__bottom {
+            justify-content: center;
+        }
+
+        &__prices {
+            max-width: 440px;
+        }
+    }
+}
+
+.project-section {
+    .project-item {
+        &__img {
+            width: 600px;
+        }
+    }
+}

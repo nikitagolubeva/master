@@ -1,0 +1,112 @@
+.team-section {
+    margin-top: var(--var-100);
+
+    &__header {
+        @extend %H1;
+        font-weight: 800;
+        color: var(--black);
+    }
+
+    &__container {
+        margin-top: var(--var-48);
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: 30px;
+        row-gap: 48px;
+    }
+
+    .team-item {
+        width: 280px;
+
+        &__img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+
+            object-fit: cover;
+            object-position: center;
+
+            border-radius: 50%;
+        }
+
+        &__name {
+            margin-top: var(--var-24);
+
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
+            color: var(--black);
+
+            text-align: center;
+        }
+
+        &__role {
+            margin-top: 12px;
+
+            @extend %text-normal;
+            color: var(--black);
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .team-section {
+        &__container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            column-gap: 75px;
+            row-gap: 48px;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .team-section {
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            justify-content: space-between;
+            column-gap: 60px;
+            row-gap: 30px;
+        }
+
+        .team-item {
+            width: 200px;
+
+            &__name {
+                margin-top: 16px;
+
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 24px;
+
+                text-align: center;
+            }
+
+            &__role {
+                margin-top: 8px;
+
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .team-section {
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(1, 200px);
+            justify-content: center;
+            column-gap: 60px;
+            row-gap: 30px;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.contacts-page {
+    .addresses-block {
+        display: grid;
+        column-gap: 0;
+
+        grid-template-columns: 1fr;
+        row-gap: 45px;
+
+        margin-top: 40px;
+    }
+}

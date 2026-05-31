@@ -1,0 +1,27 @@
+.requisites-page {
+    .contacts-page__header {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .requisites-grid {
+        row-gap: 18px;
+    }
+
+    .second-header {
+        margin-top: 24px;
+    }
+
+    .requisites-item {
+        &__label {
+            font-size: 14px;
+        }
+
+        &__text {
+            font-size: 14px;
+        }
+    }
+
+    .requisites-button {
+        margin-top: 32px;
+    }
+}

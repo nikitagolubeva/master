@@ -1,0 +1,17 @@
+%grey-btn {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px;
+    background-color: var(--bw4);
+
+    border-radius: 4px;
+
+    span {
+        @extend %BODY3;
+        color: var(--bw1);
+    }
+}

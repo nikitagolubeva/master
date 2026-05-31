@@ -1,0 +1,23 @@
+.requisites-page {
+    .requisites-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .second-header {
+        margin-top: 24px;
+    }
+
+    .requisites-item {
+        &__label {
+            font-size: 16px;
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+    }
+
+    .requisites-button {
+        margin-top: 60px;
+    }
+}

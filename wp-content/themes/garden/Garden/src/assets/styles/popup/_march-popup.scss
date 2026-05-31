@@ -1,0 +1,332 @@
+.march-popup {
+    padding-top: 140px;
+
+    .popup-container {
+        padding: 0;
+        max-width: 480px;
+        min-height: 0;
+        background-color: transparent;
+    }
+    .popup-block {
+        position: relative;
+        background-color: transparent;
+
+        .heart {
+            position: absolute;
+
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            &.heart-1 {
+                top: -240px;
+                right: 100px;
+
+                animation-name: circles-1;
+            }
+
+            &.heart-2 {
+                width: 117px;
+                height: auto;
+
+                top: -310px;
+                right: 300px;
+
+                img {
+                    transform: rotate(-15deg);
+                }
+
+                animation-name: circles-1;
+                animation-delay: -0.5s;
+            }
+
+            &.heart-3 {
+                width: 110px;
+                height: auto;
+
+                top: -190px;
+                right: 390px;
+
+                img {
+                    transform: rotate(-20deg);
+                }
+
+                animation-name: circles-1;
+                animation-delay: -0.2s;
+            }
+
+            &.heart-4 {
+                width: 75px;
+                height: auto;
+
+                top: -100px;
+                right: 540px;
+
+                img {
+                    transform: rotate(-40deg);
+                }
+
+                animation-name: circles-1;
+                animation-delay: -1s;
+            }
+
+            &.heart-5 {
+                width: 70px;
+                height: auto;
+
+                top: -240px;
+                right: 0;
+
+                img {
+                    transform: rotate(15deg);
+                }
+
+                animation-name: circles-1;
+                animation-delay: -0.2s;
+            }
+
+            &.heart-6 {
+                width: 112px;
+                height: auto;
+
+                top: -160px;
+                right: -80px;
+
+                img {
+                    transform: rotate(40deg);
+                }
+
+                animation-name: circles-1;
+                animation-delay: -1.5s;
+            }
+        }
+
+        .envelope {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -60%);
+
+            z-index: -1;
+        }
+        .img-title {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bg-img {
+            position: fixed;
+
+            width: 100%;
+            height: 100%;
+            bottom: -50px;
+            left: 0;
+
+            object-fit: contain;
+            object-position: bottom;
+
+            z-index: -2;
+        }
+
+        &__text {
+            margin-top: 12px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--bw7);
+
+            span {
+                display: none;
+            }
+        }
+
+        &__btn {
+            margin-top: 32px;
+        }
+    }
+
+    @keyframes circles-1 {
+        from {
+            transform: rotate(0deg) translate(-4px) rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg) translate(-4px) rotate(-360deg);
+        }
+    }
+    @keyframes circles-2 {
+        from {
+            transform: rotate(-15deg) translate(-4px) rotate(-15deg);
+        }
+        to {
+            transform: rotate(375deg) translate(-4px) rotate(-375deg);
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .popup-wrapper.march-popup {
+        padding-top: 140px;
+
+        .popup-container {
+            height: auto;
+            padding: 0;
+            max-width: 480px;
+            min-height: 0;
+        }
+
+        .bg-img {
+            position: fixed;
+
+            width: 100%;
+            height: 100%;
+            bottom: 0px;
+            left: 0;
+
+            object-fit: contain;
+            object-position: bottom;
+
+            z-index: -2;
+        }
+
+        .img-title {
+            width: 420px;
+            height: auto;
+        }
+
+        .envelope {
+            width: 550px;
+            height: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .popup-wrapper.march-popup {
+        .popup-container {
+            height: auto;
+            padding: 0;
+            max-width: 480px;
+            min-height: 0;
+            margin-left: 20px;
+            margin-right: 20px;
+            background-color: transparent;
+        }
+
+        .bg-img {
+            position: fixed;
+
+            width: 100%;
+            height: 100%;
+            bottom: 0px;
+            left: 0;
+
+            object-fit: contain;
+            object-position: bottom;
+
+            z-index: -2;
+        }
+
+        .img-title {
+            width: 260px;
+            height: auto;
+        }
+
+        .envelope {
+            width: 105%;
+            height: auto;
+        }
+
+        .popup-block {
+            width: 100%;
+
+            border-radius: 16px 16px 0 0;
+
+            background-color: transparent;
+
+            &__text {
+                max-width: 305px;
+
+                span {
+                    display: inline;
+                }
+            }
+
+            &__btn {
+                width: 300px;
+                margin-top: 16px;
+            }
+
+            .heart {
+                &.heart-1 {
+                    top: -125px;
+                    right: 37%;
+
+                    width: 80px;
+                }
+
+                &.heart-2 {
+                    width: 47px;
+
+                    top: -170px;
+                    right: auto;
+                    left: 70px;
+                }
+
+                &.heart-3 {
+                    width: 67px;
+
+                    top: -110px;
+                    right: auto;
+                    left: 30px;
+                }
+
+                &.heart-4 {
+                    width: 45px;
+
+                    top: -50px;
+                    right: auto;
+                    left: -10px;
+                }
+
+                &.heart-5 {
+                    width: 40px;
+                    height: auto;
+
+                    top: -130px;
+                    right: 60px;
+                }
+
+                &.heart-6 {
+                    width: 62px;
+                    height: auto;
+
+                    top: -80px;
+                    right: -0px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .popup-wrapper.march-popup {
+        .popup-block {
+            .img-title {
+                width: 240px;
+            }
+            &__btn {
+                margin-top: 10px;
+                padding: 8px;
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+    }
+}

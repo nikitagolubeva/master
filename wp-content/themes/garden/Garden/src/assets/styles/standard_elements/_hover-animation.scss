@@ -1,0 +1,71 @@
+.hover-color {
+    transition: color 0.3s;
+    svg {
+        path {
+            transition:
+                fill 0.3s,
+                stroke 0.3s;
+        }
+    }
+
+    &:hover {
+        color: #1e8415 !important;
+
+        span {
+            color: #1e8415 !important;
+        }
+
+        svg {
+            path {
+                stroke: #1e8415;
+            }
+        }
+    }
+}
+
+.arrow-hover-left {
+    svg {
+        transition: transform 0.3s;
+    }
+    &:hover {
+        svg {
+            transform: translateX(-5px);
+        }
+    }
+}
+
+.arrow-hover-right {
+    svg {
+        transition: transform 0.3s;
+    }
+    &:hover {
+        svg {
+            transform: translateX(5px);
+        }
+    }
+}
+
+.arrow-hover-bottom {
+    svg {
+        transition: transform 0.3s;
+    }
+    &:hover {
+        svg {
+            transform: translateY(5px);
+        }
+    }
+}
+
+.hover-scale {
+    display: inline-block;
+    overflow: hidden;
+
+    img {
+        transition: 0.4s;
+        display: block;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.blog-block {
+    margin: 50px 16px 0;
+
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    column-gap: 0;
+    row-gap: 12px;
+
+    &__link {
+        padding: 14px 16px;
+
+        grid-column: 1/2;
+
+        width: 100%;
+        justify-self: center;
+
+        font-weight: 300;
+    }
+}
+
+.blog-item {
+    height: 218px;
+
+    &__text-wrapper {
+        padding: 2px 12px 12px;
+
+        height: 86px;
+    }
+
+    &__text {
+        font-size: 20px;
+        line-height: 24px;
+
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        font-weight: 400;
+    }
+}

@@ -1,0 +1,229 @@
+.services-section {
+    overflow: hidden;
+
+    .services-row {
+        display: flex;
+
+        height: 500px;
+
+        column-gap: 8px;
+
+        position: relative;
+
+        &:not(:first-of-type) {
+            margin-top: 8px;
+        }
+    }
+
+    .services-live-item {
+        display: block;
+
+        width: 25%;
+
+        padding: 240px 0 60px 48px;
+
+        position: relative;
+        overflow-y: hidden;
+
+        transition: padding-top 0.5s;
+
+        &__main-info {
+            width: 240px;
+
+            position: relative;
+        }
+
+        &__number-container {
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            transition: top 0.5s;
+        }
+
+        &__number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+
+            background-color: var(--bw5);
+            color: #24282e;
+
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 125%;
+            text-transform: uppercase;
+
+            position: relative;
+
+            &::after {
+                content: "";
+
+                position: absolute;
+
+                left: 0;
+                bottom: -19px;
+
+                width: 240px;
+                height: 1px;
+
+                background-color: var(--bw5);
+            }
+        }
+
+        &__name {
+            padding-top: 80px;
+
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 125%;
+            text-transform: uppercase;
+            color: var(--bw5);
+
+            min-height: 170px;
+
+            transition:
+                padding-top 0.5s,
+                min-height 0.5s;
+        }
+
+        &__desc {
+            transition:
+                transform 0.5s,
+                max-height 0.5s;
+
+            transform: translateY(400px);
+        }
+
+        &__text {
+            text-align: justify;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+            color: var(--bw5);
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -moz-box;
+            -moz-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+            line-clamp: 6;
+            box-orient: vertical;
+
+            min-height: 120px;
+
+            margin-top: 12px;
+        }
+
+        &__link {
+            @extend %green-btn;
+
+            padding: 8px 12px;
+
+            margin-top: 24px;
+
+            display: none;
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            z-index: -2;
+        }
+
+        &::after {
+            content: "";
+
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            z-index: -1;
+
+            background-color: rgba(0, 0, 0, 0.3);
+
+            opacity: 0;
+
+            transition: opacity 0.5s;
+        }
+
+        &:hover {
+            padding-top: 180px;
+
+            .services-live-item__number-container {
+                top: -330px;
+            }
+
+            .services-live-item__name {
+                padding-top: 0;
+                min-height: 30px;
+            }
+
+            .services-live-item__desc {
+                transform: translateY(0);
+            }
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    .four-row {
+        // .services-live-item__img {
+        //     display: none;
+        // }
+
+        .services-live-item__main-info {
+            width: 312px;
+        }
+
+        .services-live-item__number {
+            &::after {
+                width: 280px;
+            }
+        }
+
+        // .row-bg {
+        //     width: 100%;
+        //     height: 100%;
+
+        //     object-fit: cover;
+
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+
+        //     z-index: -3;
+        // }
+    }
+
+    .fifth-row {
+        .services-live-item {
+            width: 20%;
+        }
+
+        .services-live-item__main-info {
+            width: 250px;
+        }
+    }
+}

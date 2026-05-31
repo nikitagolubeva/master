@@ -1,0 +1,15 @@
+.services-section {
+    .services-row {
+        display: flex;
+        flex-direction: column;
+
+        height: auto;
+    }
+
+    .services-live-item {
+        width: 100%;
+        height: 240px;
+
+        padding: 0;
+    }
+}

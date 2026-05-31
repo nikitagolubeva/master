@@ -1,0 +1,120 @@
+.cart-card {
+    width: 100%;
+
+    position: relative;
+    padding-bottom: 38px;
+
+    &__container {
+        margin-top: 8px;
+    }
+
+    &__img {
+        width: 110px;
+        height: 110px;
+    }
+
+    &__info {
+        margin-left: 12px;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        width: 100%;
+
+        &.desc-top {
+            display: none;
+        }
+
+        &.mobile-top {
+            display: flex;
+        }
+    }
+
+    &__name {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -moz-box;
+        -moz-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-clamp: 3;
+        box-orient: vertical;
+    }
+
+    &__text-info {
+        margin-top: 4px;
+        &__subinfo {
+            margin-left: 0;
+
+            width: 100%;
+
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+
+            display: flex;
+
+            p {
+                width: 110px;
+                text-align: center;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            p:not(:first-of-type) {
+                margin-left: 8px;
+            }
+        }
+    }
+
+    &__price {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .amount-block {
+        margin-top: 7px;
+
+        &__btn {
+            width: 24px;
+            height: 24px;
+            border: none;
+            border-radius: 1px;
+        }
+
+        &__amount {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+    }
+
+    &__articul {
+        margin-top: 0;
+        font-size: 14px;
+        line-height: 20px;
+
+        order: -1;
+    }
+
+    &__desc {
+        display: none;
+    }
+}

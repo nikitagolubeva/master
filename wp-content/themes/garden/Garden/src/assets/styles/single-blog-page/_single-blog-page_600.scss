@@ -1,0 +1,33 @@
+.single-blog-page {
+    &__content {
+        &__header {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__container {
+        row-gap: 40px;
+    }
+
+    &__blogs {
+        flex-direction: column;
+        row-gap: 12px;
+
+        .blog-item {
+            height: 220px;
+        }
+    }
+
+    .recommended-goods {
+        margin-top: 64px;
+
+        .product-card {
+            width: 200px;
+        }
+
+        .swiper-slide {
+            width: fit-content;
+        }
+    }
+}

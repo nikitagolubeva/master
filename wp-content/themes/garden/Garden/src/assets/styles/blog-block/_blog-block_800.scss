@@ -1,0 +1,50 @@
+.blog-block {
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    column-gap: 8px;
+    row-gap: 24px;
+
+    > a:not(:first-of-type) {
+        margin-left: 0;
+    }
+
+    &__link {
+        padding: 14px 16px;
+
+        writing-mode: horizontal-tb;
+        transform: rotate(0);
+
+        grid-column: 1/4;
+
+        span {
+            display: inline;
+        }
+
+        width: fit-content;
+        justify-self: center;
+
+        font-weight: 300;
+    }
+}
+
+.blog-item {
+    height: 165px;
+
+    &__text-wrapper {
+        padding: 2px 12px 12px;
+
+        height: 86px;
+    }
+
+    &__text {
+        font-size: 20px;
+        line-height: 24px;
+
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+}

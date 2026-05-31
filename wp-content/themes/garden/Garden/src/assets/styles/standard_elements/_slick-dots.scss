@@ -1,0 +1,19 @@
+.slick-dots {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: -30px;
+}
+.slick-dots button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #e5e5ea;
+}
+.slick-dots li.slick-active button {
+}

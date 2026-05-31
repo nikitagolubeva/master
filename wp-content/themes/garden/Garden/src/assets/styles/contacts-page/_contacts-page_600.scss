@@ -1,0 +1,102 @@
+.contacts-page {
+    &__header {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .phone-item {
+        display: flex;
+        flex-direction: column;
+
+        &__phone {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        &__name {
+            margin-left: 0;
+            margin-top: 8px;
+        }
+
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+    }
+
+    .addresses-block {
+        display: grid;
+        column-gap: 0;
+
+        grid-template-columns: 1fr;
+        row-gap: 45px;
+
+        margin-top: 40px;
+    }
+
+    .address-item {
+        .js-show-contacts {
+            display: flex;
+        }
+        .js-hide-contacts {
+            display: none;
+        }
+        &__info {
+            margin-bottom: 0;
+
+            display: none;
+        }
+
+        &__header {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 30px;
+
+            order: -2;
+        }
+
+        &__line {
+            margin-top: 24px;
+
+            &:first-child {
+                margin-top: 24px;
+            }
+        }
+
+        &__map {
+            order: -1;
+
+            margin-top: 10px;
+        }
+
+        &__btn {
+            display: flex;
+            align-items: center;
+
+            margin-top: 16px;
+
+            background-color: transparent;
+
+            span {
+                color: var(--bw0);
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            svg {
+                margin-left: 4px;
+            }
+        }
+
+        &.show-contacts {
+            .address-item__info {
+                display: block;
+            }
+            .js-show-contacts {
+                display: none;
+            }
+            .js-hide-contacts {
+                display: flex;
+            }
+        }
+    }
+}

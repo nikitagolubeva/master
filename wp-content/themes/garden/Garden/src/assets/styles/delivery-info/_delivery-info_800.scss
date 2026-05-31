@@ -1,0 +1,16 @@
+.delivery-page {
+}
+
+.payment-info-block {
+    &__container {
+        margin-top: 32px;
+
+        flex-direction: column;
+        row-gap: 24px;
+        column-gap: 0;
+    }
+
+    &__item {
+        max-width: 340px;
+    }
+}

@@ -1,0 +1,14 @@
+.order-page {
+    &__container {
+        column-gap: 0;
+        row-gap: 64px;
+        flex-direction: column;
+    }
+    &__info {
+        margin-top: 0;
+
+        min-width: 429px;
+        max-width: 428px;
+        padding: 24px;
+    }
+}

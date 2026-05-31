@@ -1,0 +1,22 @@
+.blog-block {
+    height: 270px;
+
+    &__link {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        letter-spacing: 4.8px;
+        text-transform: uppercase;
+
+        padding: 0 16px;
+    }
+}
+
+.blog-item {
+    &__text-wrapper {
+        padding: 28px 12px 12px;
+
+        height: 120px;
+    }
+}

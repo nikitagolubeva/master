@@ -1,0 +1,44 @@
+.search-container {
+  position: relative;
+
+  &__input {
+    @extend %link;
+    color: $text;
+    padding: 10px 20px 10px 14px;
+
+    background-color: #eeeef5;
+
+    border-radius: 4px;
+
+    outline: transparent solid 1px;
+    outline-offset: -1px;
+
+    transition: outline .3s;
+
+    &:focus {
+      outline: $grey1 solid 1px;
+      outline-offset: -1px;
+    }
+
+    &::placeholder {
+      color: #666666;
+      font-weight: 300;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+
+    right: 10px;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    object-position: center;
+
+    cursor: pointer;
+  }
+}

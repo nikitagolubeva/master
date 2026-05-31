@@ -1,0 +1,22 @@
+.wrapper {
+  margin: 0 16px;
+}
+
+.fixed {
+  overflow: hidden;
+  padding-right: 0;
+}
+
+.product-popup-shown {
+  > * {
+    display: none;
+  }
+}
+
+.desc {
+  display: none;
+}
+
+.mobile {
+  display: block;
+}

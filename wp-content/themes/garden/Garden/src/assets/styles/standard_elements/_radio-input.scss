@@ -1,0 +1,53 @@
+.radio-input {
+  position: relative;
+
+  input {
+    position: absolute;
+    z-index: -99;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+
+    transition:
+      color 0.3s,
+      background-color 0.3s;
+
+    padding: 12px;
+    border-radius: 4px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: var(--bw1);
+
+    cursor: pointer;
+
+    background-color: var(--bw4);
+
+    span {
+      margin-left: 8px;
+    }
+
+    &:hover {
+      background-color: #c6cbd2;
+    }
+  }
+
+  input:checked + label {
+    background-color: var(--secondary-light);
+
+    color: var(--bw0);
+
+    svg {
+      path {
+        fill: var(--secondary);
+      }
+    }
+  }
+}

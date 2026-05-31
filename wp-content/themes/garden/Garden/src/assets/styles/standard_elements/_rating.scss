@@ -1,0 +1,79 @@
+.product-rating {
+    position: relative;
+    width: 170px;
+    .active-rating {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        width: auto;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        column-gap: 5px;
+        span {
+            width: 30px;
+            height: 30px;
+            padding: 0;
+        }
+        span:before {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-image: url("resourses/star_rate_full.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    .stars-container {
+        overflow: hidden;
+        width: auto;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        column-gap: 5px;
+        span {
+            width: 30px;
+            height: 30px;
+            padding: 0;
+        }
+        span:before {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-image: url("resourses/star_rate.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .product-rating {
+        width: 140px;
+        .active-rating {
+            span {
+                width: 24px;
+                height: 24px;
+            }
+            span:before {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        .stars-container {
+            span {
+                width: 24px;
+                height: 24px;
+            }
+            span:before {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}

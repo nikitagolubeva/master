@@ -1,0 +1,13 @@
+.delivery-page {
+    .pickup-container {
+        flex-direction: column;
+        column-gap: 0;
+        row-gap: 24px;
+    }
+    .delivery-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 16px;
+        row-gap: 16px;
+    }
+}

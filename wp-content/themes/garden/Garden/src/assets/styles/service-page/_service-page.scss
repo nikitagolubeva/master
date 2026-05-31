@@ -1,0 +1,188 @@
+.service-page {
+    &__name {
+        @extend %H2;
+        color: var(--bw0);
+        text-transform: uppercase;
+        font-weight: 400;
+
+        margin-top: var(--var-60);
+    }
+
+    &__img {
+        margin-top: var(--var-24);
+
+        display: block;
+
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .service-info {
+        margin-top: var(--var-48);
+
+        display: flex;
+        justify-content: space-between;
+        column-gap: 30px;
+
+        &__text {
+            @extend %text-normal;
+            color: var(--black);
+            text-align: justify;
+
+            max-width: 700px;
+        }
+
+        &__links {
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+        }
+
+        &__download-link {
+            @extend %green-btn;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .choose-pack-section {
+        margin-top: var(--var-160);
+    }
+
+    .prices-section {
+        margin-top: var(--var-100);
+
+        padding: 0 32px;
+
+        &__header {
+            @extend %H2;
+            text-transform: uppercase;
+            color: var(--bw0);
+
+            max-width: 1570px;
+        }
+
+        &__container {
+            margin-top: var(--var-48);
+
+            display: grid;
+            grid-template-columns: repeat(5, 312px);
+            justify-content: space-between;
+            row-gap: 48px;
+        }
+
+        .price-item {
+            background-color: transparent;
+
+            transition:
+                background-color 0.8s,
+                max-height 0.8s;
+
+            cursor: pointer;
+
+            max-height: 108px;
+
+            overflow: hidden;
+
+            &__info {
+                padding: 0 0 0 12px;
+                border-left: 1px solid var(--black);
+
+                height: 100%;
+                max-height: 108px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            &__name {
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 24px;
+                color: var(--black);
+            }
+
+            &__price {
+                margin-top: 12px;
+                @extend %text-small-2;
+                color: var(--black);
+            }
+
+            &__list {
+                padding-top: 12px;
+                padding-left: 12px;
+                padding-right: 20px;
+                padding-bottom: 12px;
+
+                list-style: none;
+
+                //display: none;
+
+                li {
+                    @extend %text-small-2;
+
+                    position: relative;
+
+                    padding-left: 11px;
+
+                    &::after {
+                        content: "-";
+
+                        position: absolute;
+                        left: 1px;
+                        top: 0;
+
+                        display: block;
+                        width: fit-content;
+                        height: auto;
+                    }
+
+                    &:not(:first-child) {
+                        margin-top: 12px;
+                    }
+
+                    &:last-child {
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+
+            &.show {
+                background-color: var(--secondary-light);
+                max-height: 810px;
+
+                .price-item__list {
+                    ///display: block;
+                }
+            }
+
+            &.big {
+                max-height: 156px;
+
+                .price-item__info {
+                    max-height: 156px;
+                }
+
+                &.show {
+                    max-height: 858px;
+                }
+            }
+        }
+    }
+}
+
+.single-pack-slider {
+    position: relative;
+
+    padding-bottom: 50px;
+
+    .swiper-scrollbar {
+        height: 6px;
+        background-color: var(--bw3);
+        left: 0;
+
+        width: calc(100% - 240px);
+    }
+}

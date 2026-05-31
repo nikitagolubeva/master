@@ -1,0 +1,323 @@
+.order-page {
+    margin-top: var(--var-32);
+
+    &__header {
+        @extend %subheader;
+    }
+
+    &__container {
+        margin-top: var(--var-24);
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__form {
+        width: 100%;
+        max-width: 900px;
+
+        .input-container {
+            @include text-input(var(--bw0), var(--bw1), var(--bw1), (16px 24px), var(--bw3), 0, var(--bw0), none, 12px);
+
+            input {
+                background-color: var(--input-bg);
+            }
+        }
+
+        .name-input {
+            max-width: 600px;
+        }
+
+        #order-item {
+            max-width: 600px;
+        }
+
+        .form-row {
+            display: flex;
+            margin-top: var(--var-24);
+
+            max-width: 85%;
+
+            .input-container {
+                width: 100%;
+                &:not(:first-child) {
+                    margin-left: var(--var-48);
+                }
+            }
+        }
+
+        .delivery-block {
+            margin-top: var(--var-24);
+
+            &__header {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+                color: var(--bw1);
+            }
+        }
+
+        .input-row {
+            display: flex;
+
+            margin-top: 12px;
+            column-gap: 12px;
+        }
+    }
+
+    .delivery-page {
+        .text {
+            margin-top: 12px;
+
+            @extend %text-normal;
+            color: var(--black);
+
+            a {
+                @extend %text-normal;
+                color: var(--secondary);
+            }
+        }
+
+        > div {
+            margin-top: var(--var-24);
+            max-width: 600px;
+        }
+        .comment {
+            label {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+                color: var(--bw1);
+            }
+            textarea {
+                margin-top: 12px;
+
+                width: 100%;
+                height: 130px;
+                background-color: var(--input-bg);
+                border: 1px solid #c6cbd2;
+
+                resize: none;
+
+                @extend %text-normal;
+
+                margin-top: 12px;
+
+                padding: 16px 24px;
+
+                font-size: 20px;
+                line-height: 30px;
+                color: var(--bw0);
+
+                resize: none;
+
+                &::placeholder {
+                    color: var(--bw1);
+                }
+            }
+        }
+    }
+
+    .pickup-page {
+        margin-top: var(--var-24);
+
+        .label-text {
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 400;
+            color: var(--bw1);
+        }
+
+        .pickup-item {
+            margin-top: 12px;
+
+            flex-direction: column;
+
+            max-width: 752px;
+
+            label {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 12px 16px;
+            }
+
+            p {
+                color: var(--secondary);
+                @extend %text-normal;
+            }
+
+            &__show-map {
+                display: flex;
+                align-items: center;
+
+                margin-top: 12px;
+            }
+
+            span {
+                margin-left: 4px;
+
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 400;
+                color: var(--secondary);
+            }
+        }
+    }
+
+    .payment-block {
+        margin-top: var(--var-24);
+        &__header {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 30px;
+            color: var(--bw1);
+        }
+
+        &__container {
+            display: flex;
+            flex-wrap: wrap;
+
+            margin-top: 12px;
+
+            column-gap: 12px;
+            row-gap: 12px;
+        }
+
+        .payment-method {
+            margin-top: 24px;
+
+            max-width: 600px;
+
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+        }
+    }
+
+    .credit-sum {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 20px;
+        color: var(--bw0);
+
+        margin-top: 16px;
+    }
+
+    .credit-button {
+        margin-top: 32px;
+
+        @extend %green-btn;
+        padding: 14px 16px;
+        letter-spacing: 4.8px;
+        text-transform: uppercase;
+
+        width: fit-content;
+    }
+
+    .select-container {
+        label {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 30px;
+            color: var(--bw1);
+        }
+    }
+
+    &__info {
+        min-width: 428px;
+        max-width: 430px;
+
+        padding: 24px;
+
+        background-color: var(--bw4);
+
+        height: fit-content;
+
+        margin-top: 42px;
+
+        &__row {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                &:first-of-type {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    text-transform: uppercase;
+                    color: var(--bw0);
+                }
+                &:last-of-type {
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 24px;
+                    color: var(--bw0);
+                }
+            }
+
+            &:not(:first-child) {
+                margin-top: var(--var-24);
+            }
+        }
+
+        &__btn {
+            position: relative;
+
+            margin-top: var(--var-24);
+
+            @extend %btn;
+
+            width: 100%;
+
+            padding: 14px;
+
+            text-align: center;
+
+            background-color: var(--secondary);
+            color: var(--bw5);
+
+            transition: background-color 0.3s;
+            &:hover {
+                background-color: #1e8415;
+                opacity: 1;
+            }
+        }
+    }
+
+    &.loading {
+        .loading-container {
+            display: block;
+        }
+        .order-page__info__btn {
+            pointer-events: none;
+
+            .loading-container .loading-block span {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}
+
+.underline {
+    position: relative;
+    width: fit-content;
+
+    &::after {
+        content: "";
+
+        display: block;
+        width: 100%;
+        height: 1px;
+
+        background-color: var(--secondary);
+
+        position: absolute;
+
+        left: 50%;
+        transform: translateX(-50%);
+
+        bottom: 1px;
+    }
+}

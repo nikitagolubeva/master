@@ -1,0 +1,229 @@
+.product-page {
+    .breadcrumb {
+        display: none;
+    }
+    .catalog-categories {
+        display: none;
+    }
+
+    &__info {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .main-product {
+        flex-direction: column;
+
+        &__gallery {
+            width: 100%;
+
+            .mySwiper {
+                height: 56px;
+            }
+
+            .mySwiper2 {
+                height: 328px;
+            }
+        }
+
+        &__info {
+            margin-left: 0;
+            margin-top: 24px;
+        }
+
+        &__name {
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        &__price-container {
+            align-items: flex-start;
+            flex-direction: column;
+            row-gap: 8px;
+        }
+
+        &__discount-time {
+            margin-left: 0;
+        }
+
+        &__price {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        &__buy-now {
+            width: 100%;
+        }
+
+        &__buy {
+            flex-shrink: 0;
+        }
+
+        .loading-container .loading-block span {
+            width: 25px;
+            height: 25px;
+        }
+
+        .icon-item {
+            div {
+                min-width: 160px;
+                p {
+                    white-space: wrap;
+                }
+            }
+
+            p {
+                width: fit-content;
+            }
+        }
+    }
+
+    .tabs {
+        width: 100%;
+        &__header {
+            width: 100%;
+        }
+
+        &__tab {
+            .info-box {
+                p {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+
+            .address-item {
+                .link {
+                    margin-top: 4px;
+                }
+            }
+
+            ul {
+                list-style: none;
+
+                margin-top: 12px;
+
+                li {
+                    padding-left: 30px;
+
+                    font-size: 20px;
+                    line-height: 30px;
+
+                    &::after {
+                        content: "";
+
+                        position: absolute;
+
+                        width: 5px;
+                        height: 5px;
+
+                        border-radius: 50%;
+
+                        background-color: var(--bw0);
+
+                        left: 11px;
+                        top: 12px;
+                    }
+                }
+            }
+
+            .zone-container {
+                flex-direction: column-reverse;
+                row-gap: 12px;
+                column-gap: 0;
+
+                .temp-item {
+                    margin-top: 5px;
+                }
+
+                &__img-container {
+                    margin-top: 0;
+
+                    border: none;
+                    padding: 0;
+                    width: 100%;
+                    height: auto;
+                }
+                &__img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .conventions-block {
+                column-gap: 0;
+
+                grid-template-columns: 1fr;
+                row-gap: 32px;
+
+                .desc {
+                    display: none;
+                }
+
+                &__big-column {
+                    grid-column: 1/2;
+                }
+
+                &__big-container {
+                    column-gap: 0;
+                    grid-template-columns: 1fr;
+                }
+
+                .convention-item {
+                    width: 100%;
+                }
+
+                &__container {
+                    flex-direction: column;
+                }
+
+                &__column {
+                    .conventions-block__container {
+                        display: none;
+                    }
+
+                    &.show {
+                        svg {
+                            transform: rotate(180deg);
+                        }
+
+                        .conventions-block__container {
+                            display: flex;
+                        }
+                    }
+                }
+
+                .column-header {
+                    display: flex;
+                    column-gap: 4px;
+                    align-items: center;
+
+                    svg {
+                        transition: transform 0.3s;
+                    }
+                }
+            }
+        }
+    }
+
+    .recommended-goods {
+        &__container {
+            overflow-x: scroll;
+        }
+    }
+}
+
+.advantages {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+}
+
+.product-slider {
+    .product-card {
+        max-width: 200px;
+    }
+
+    .swiper-slide {
+        width: 200px;
+    }
+}

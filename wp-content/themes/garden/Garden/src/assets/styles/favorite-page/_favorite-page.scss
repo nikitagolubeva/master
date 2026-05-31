@@ -1,0 +1,29 @@
+.favorite-page {
+    margin-top: 40px;
+
+    &__container {
+        margin-top: 24px;
+
+        display: grid;
+        row-gap: 24px;
+        column-gap: 12px;
+        grid-template-columns: repeat(5, 265px);
+        grid-auto-rows: 554px;
+    }
+
+    &__text {
+        margin-top: 32px;
+        @extend %body-large;
+        font-weight: 400;
+        color: var(--bw0);
+        margin-bottom: 300px;
+
+        display: none;
+    }
+
+    &.empty {
+        .favorite-page__text {
+            display: block;
+        }
+    }
+}

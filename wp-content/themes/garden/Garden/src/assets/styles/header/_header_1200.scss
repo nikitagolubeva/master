@@ -1,0 +1,82 @@
+.header {
+    &__logo {
+        width: 217px;
+        svg {
+            margin-top: -5px;
+        }
+    }
+    &__top {
+        padding: 8px 0;
+
+        &__time {
+            width: 300px;
+
+            p {
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 24px;
+            }
+        }
+        &__info {
+            > span {
+                display: none;
+            }
+
+            .address-text-desc {
+                display: none;
+            }
+
+            .address-text-laptop {
+                display: block;
+                margin-left: 4px;
+                text-decoration: underline;
+            }
+        }
+        &__contacts {
+            width: 300px;
+            justify-content: flex-end;
+            a {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 24px;
+            }
+        }
+    }
+
+    &__nav {
+        margin-left: 32px;
+        ul {
+            li {
+                &:not(:first-of-type) {
+                    margin-left: 32px;
+                }
+                a {
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 16px;
+                    text-transform: initial;
+                }
+            }
+        }
+    }
+
+    .hover-search:hover .hover-search__input {
+        width: 180px !important;
+    }
+
+    &__search {
+        .hover-search__input {
+            background-color: transparent;
+            font-size: 16px;
+            line-height: 16px;
+            border-color: var(--bw0);
+            color: var(--bw0);
+
+            &::placeholder {
+                font-size: 16px !important;
+                line-height: 16px !important;
+                color: var(--bw0);
+            }
+        }
+    }
+}

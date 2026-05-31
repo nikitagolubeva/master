@@ -1,0 +1,15 @@
+.delivery-page {
+    .address-item {
+        .link {
+            margin-top: 4px;
+        }
+    }
+    .delivery-container {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 17px;
+    }
+    .delivery-item {
+        padding: 12px 10px 22px;
+    }
+}

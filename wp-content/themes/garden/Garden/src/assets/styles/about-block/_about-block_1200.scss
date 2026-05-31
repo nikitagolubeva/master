@@ -1,0 +1,36 @@
+.about-block {
+    &__container {
+        flex-direction: column;
+    }
+
+    &__info {
+        max-width: 745px;
+    }
+
+    &__img {
+        margin-left: 0;
+        margin-top: 32px;
+    }
+
+    &__bg-img {
+        &.wine {
+            bottom: 100px;
+            right: -60px;
+        }
+
+        &.stick {
+            top: -128px;
+            right: -300px;
+        }
+
+        &.berries {
+            bottom: -58px;
+            left: -101px;
+        }
+
+        &.currant {
+            top: -20px;
+            left: 0;
+        }
+    }
+}

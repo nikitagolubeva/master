@@ -1,0 +1,46 @@
+.main {
+    .first-block {
+        padding-top: 130px;
+        &__title {
+        }
+        &__text {
+            margin-top: 12px;
+        }
+        &__media {
+            margin-top: 20px;
+        }
+        &__button {
+            margin-top: 30px;
+        }
+        &__bottom {
+            margin-top: 20px;
+        }
+    }
+    .categories-section {
+        &__container {
+            grid-auto-rows: 326px;
+        }
+    }
+    .offers-block {
+        .banners-container {
+            padding-left: 32px;
+        }
+
+        .borderless-banners-slider {
+            .swiper-slide {
+                &:last-of-type {
+                    margin-right: 20px;
+                }
+            }
+            .swiper-scrollbar {
+                width: calc(100% - 20px);
+            }
+        }
+    }
+
+    .recommended-goods-block {
+        .swiper-scrollbar {
+            width: calc(100% - 32px);
+        }
+    }
+}

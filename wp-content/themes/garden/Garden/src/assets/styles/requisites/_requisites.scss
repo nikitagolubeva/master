@@ -1,0 +1,40 @@
+.requisites-page {
+    .requisites-grid {
+        margin-top: 40px;
+
+        display: grid;
+        grid-template-columns: minmax(100px, 850px) 1fr;
+        column-gap: 60px;
+        row-gap: 24px;
+    }
+
+    .second-header {
+        margin-top: 60px;
+    }
+
+    .requisites-item {
+        &__label {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: var(--bw1);
+        }
+
+        &__text {
+            margin-top: 6px;
+
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: var(--bw0);
+        }
+    }
+
+    .requisites-button {
+        margin-top: 100px;
+
+        @extend %green-btn;
+    }
+}

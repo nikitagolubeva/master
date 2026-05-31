@@ -1,0 +1,54 @@
+.order-page {
+    &__container {
+        flex-direction: column;
+        row-gap: 48px;
+    }
+    &__info {
+        min-width: 0;
+        max-width: 100%;
+
+        padding: 24px;
+    }
+
+    &__form {
+        .form-row {
+            margin-top: 24px;
+        }
+        .input-row {
+            flex-direction: column;
+
+            .radio-input {
+                &:not(:first-child) {
+                    margin-left: 0;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .credit-button {
+        margin-top: 12px;
+    }
+
+    .credit-sum {
+        margin-top: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+
+    .select-container .select {
+        max-width: 100%;
+    }
+
+    .payment-block {
+        &__container {
+            flex-direction: column;
+
+            .radio-input:not(:first-child) {
+                margin-left: 0;
+                margin-top: 0;
+            }
+        }
+    }
+}

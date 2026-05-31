@@ -1,0 +1,223 @@
+.account {
+    margin-top: 32px;
+    &__header {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 40px; /* 125% */
+        text-transform: uppercase;
+        color: var(--bw0);
+    }
+
+    &__container {
+        display: flex;
+        min-width: 0;
+        column-gap: 24px;
+
+        margin-top: 24px;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+
+        padding: 24px 32px;
+        background-color: var(--bw4);
+
+        width: 300px;
+        height: fit-content;
+        flex-shrink: 0;
+
+        &__item {
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+
+            span {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 20px;
+                transition: color 0.3s;
+                color: var(--bw0);
+            }
+
+            svg {
+                path {
+                    transition:
+                        fill 0.3s,
+                        stroke 0.3s;
+                }
+            }
+
+            &:hover {
+                span {
+                    color: var(--secondary);
+                }
+
+                svg {
+                    path {
+                        fill: var(--secondary);
+                        stroke: var(--secondary);
+                    }
+                }
+            }
+
+            &.active {
+                pointer-events: none;
+                span {
+                    color: var(--secondary);
+                }
+
+                svg {
+                    path {
+                        fill: var(--secondary);
+                        stroke: var(--secondary);
+                    }
+                }
+            }
+        }
+    }
+
+    .data-section {
+        &__container {
+            display: flex;
+            column-gap: 72px;
+        }
+
+        .data-section-item {
+            &__label {
+                @extend %text-normal;
+                color: var(--bw1);
+            }
+
+            &__value {
+                margin-top: 12px;
+
+                @extend %text-normal;
+                color: var(--bw0);
+            }
+        }
+
+        &__link {
+            margin-top: 16px;
+
+            cursor: pointer;
+
+            &:first-of-type {
+                margin-top: 32px;
+            }
+
+            @extend %green-btn;
+
+            &.exit-profile-btn {
+                background-color: #ebedef;
+                color: var(--bw7);
+                &:hover {
+                    background-color: #c6cbd2;
+                }
+            }
+        }
+    }
+
+    .password-change {
+        max-width: 380px;
+
+        .input-container {
+            @include text-input(var(--bw0), var(--bw0), var(--bw1), (16px 24px), var(--bw3), 0, var(--bw0), none, 12px);
+
+            input {
+                background-color: var(--input-bg);
+            }
+
+            margin-top: 16px;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+
+        &__btn {
+            margin-top: 24px;
+
+            @extend %green-btn;
+            letter-spacing: 4.8px;
+            font-weight: 300;
+        }
+
+        .success-text {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 30px;
+            display: none;
+        }
+
+        .error-text {
+            margin-top: 16px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 2cap;
+            display: none;
+            color: red;
+        }
+
+        &.error {
+            .error-text {
+                display: block;
+            }
+        }
+
+        &.success {
+            .success-text {
+                display: block;
+            }
+            .input-container {
+                display: none;
+            }
+            button {
+                display: none;
+            }
+            .password-change__alert {
+                display: none;
+            }
+        }
+
+        &__alert {
+            margin-top: 24px;
+
+            padding: 10px;
+
+            background-color: var(--bw4);
+            @extend %text-small-2;
+            color: var(--black);
+        }
+    }
+
+    .order-section {
+        &__text {
+            @extend %body-large;
+            font-weight: 400;
+            color: var(--bw0);
+            margin-bottom: 300px;
+
+            display: none;
+        }
+
+        &.empty {
+            .order-section__text {
+                display: block;
+            }
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            row-gap: 32px;
+        }
+    }
+
+    .tablet {
+        display: none;
+    }
+}

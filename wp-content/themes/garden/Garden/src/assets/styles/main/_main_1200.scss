@@ -1,0 +1,64 @@
+.main {
+    .first-block {
+        padding-top: 140px;
+        &__title {
+        }
+        &__text {
+            margin-top: 12px;
+        }
+        &__button {
+            margin-top: 16px;
+        }
+        &__media {
+            margin-top: 80px;
+        }
+        &__search {
+            margin-top: 32px;
+        }
+        &__bottom {
+            margin-top: 78px;
+
+            .advantage-item {
+                &__info {
+                    margin-left: 12px;
+                }
+
+                &__header {
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 24px;
+                }
+
+                &__desc {
+                    font-size: 16px;
+                    font-weight: 300;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+
+    .categories-section {
+        &__container {
+            grid-auto-rows: 238px;
+            column-gap: 12px;
+            row-gap: 12px;
+        }
+    }
+
+    .offers-block {
+        margin-top: 32px;
+    }
+
+    .recommended-goods-block {
+        .swiper-scrollbar {
+            width: 100%;
+        }
+    }
+
+    .landscape-section {
+        &__container {
+            height: 255px;
+        }
+    }
+}

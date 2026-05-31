@@ -1,0 +1,20 @@
+.service-page {
+    &__img {
+        height: 300px;
+    }
+
+    .prices-section {
+        &__container {
+            margin-top: var(--var-48);
+
+            grid-template-columns: repeat(4, 312px);
+            row-gap: 40px;
+        }
+    }
+}
+
+.single-pack-slider {
+    .swiper-scrollbar {
+        width: calc(100% - 32px);
+    }
+}

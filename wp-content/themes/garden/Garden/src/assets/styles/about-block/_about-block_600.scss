@@ -1,0 +1,71 @@
+.about-block {
+    &__info {
+        max-width: 100%;
+    }
+
+    &__grid {
+        padding-right: 0;
+        grid-template-columns: 1fr;
+        row-gap: 16px;
+    }
+
+    &__desc {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    &__img {
+        margin-top: 24px;
+    }
+
+    .about-item {
+        flex-direction: column;
+        row-gap: 4px;
+        align-items: flex-start;
+
+        &:nth-child(1) {
+            order: -2;
+        }
+        &:nth-child(3) {
+            order: -1;
+        }
+        &__number {
+            font-size: 48px;
+            line-height: 56px;
+        }
+
+        &__text {
+            font-size: 20px;
+            line-height: 30px;
+            margin-left: 0;
+        }
+    }
+
+    &__bg-img {
+        &.wine {
+            width: 300px;
+            height: auto;
+            bottom: 510px;
+            right: -140px;
+        }
+
+        &.stick {
+            width: 470px;
+            height: auto;
+
+            top: -70px;
+            right: -216px;
+        }
+
+        &.berries {
+            width: 200px;
+            height: auto;
+            bottom: -50px;
+            left: -80px;
+        }
+
+        &.currant {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,180 @@
+@import "STYLES/variables/_colors.scss";
+
+@import "STYLES/variables/_fonts.scss";
+@import "STYLES/variables/_indents.scss";
+@import "STYLES/variables/_gradients.scss";
+
+@import "STYLES/default/_default.scss";
+@import "STYLES/general/_general.scss";
+
+@import "STYLES/slick-slider/_slick-slider.scss";
+
+@import "STYLES/breadcrumb/_breadcrumb.scss";
+
+@import "STYLES/standard_elements/burger.scss";
+@import "STYLES/standard_elements/btn.scss";
+@import "STYLES/standard_elements/green-btn.scss";
+@import "STYLES/standard_elements/text-input.scss";
+@import "STYLES/standard_elements/radio-input.scss";
+@import "STYLES/standard_elements/_loading.scss";
+@import "STYLES/standard_elements/_pagination.scss";
+@import "STYLES/standard_elements/_link.scss";
+@import "STYLES/standard_elements/_select.scss";
+@import "STYLES/standard_elements/_rating.scss";
+@import "STYLES/standard_elements/_hover-animation.scss";
+
+@import "STYLES/header/_header.scss";
+@import "STYLES/footer/_footer.scss";
+
+@import "STYLES/side-bar/_side-bar.scss";
+
+@import "STYLES/popup/_popup.scss";
+@import "STYLES/popup/_march-popup.scss";
+@import "STYLES/product-card/_product-card.scss";
+@import "STYLES/cart-card/_cart-card.scss";
+@import "STYLES/quiz/_quiz.scss";
+@import "STYLES/partners-block/_partners-block.scss";
+@import "STYLES/feedback-block/_feedback-block.scss";
+@import "STYLES/about-block/_about-block.scss";
+@import "STYLES/comment-block/_comment-block.scss";
+@import "STYLES/blog-block/_blog-block.scss";
+@import "STYLES/about-page/_services-section.scss";
+@import "STYLES/about-page/_team-section.scss";
+@import "STYLES/main/_main.scss";
+@import "STYLES/catalog/_catalog.scss";
+@import "STYLES/product-page/_product-page.scss";
+@import "STYLES/cart-page/_cart-page.scss";
+@import "STYLES/order-page/_order-page.scss";
+@import "STYLES/contacts-page/contacts-page.scss";
+@import "STYLES/about-page/_about-page.scss";
+@import "STYLES/landscape-page/_landscape-page.scss";
+@import "STYLES/service-page/_service-page.scss";
+@import "STYLES/delivery-info/_delivery-info.scss";
+@import "STYLES/blog-page/_blog-page.scss";
+@import "STYLES/single-blog-page/_single-blog-page.scss";
+@import "STYLES/authorization/_authorization.scss";
+@import "STYLES/account/_account.scss";
+@import "STYLES/account/_account-order-item.scss";
+@import "STYLES/favorite-page/_favorite-page.scss";
+@import "STYLES/404/_404.scss";
+@import "STYLES/requisites/_requisites.scss";
+
+@media screen and (max-width: 1600px) {
+    @import "STYLES/general/_general_1600.scss";
+    @import "STYLES/header/_header_1600.scss";
+    @import "STYLES/catalog/_catalog_1600.scss";
+    @import "STYLES/side-bar/_side-bar_1600.scss";
+    @import "STYLES/product-card/_product-card_1600.scss";
+    @import "STYLES/main/_main_1600.scss";
+    @import "STYLES/quiz/_quiz_1600.scss";
+    @import "STYLES/feedback-block/_feedback-block_1600.scss";
+    @import "STYLES/about-block/_about-block_1600.scss";
+    @import "STYLES/comment-block/_comment-block_1600.scss";
+    @import "STYLES/blog-block/_blog-block_1600.scss";
+    @import "STYLES/product-page/_product-page_1600.scss";
+    @import "STYLES/service-page/_service-page_1600.scss";
+    @import "STYLES/about-page/_about-page_1600.scss";
+    @import "STYLES/about-page/_services-section_1600.scss";
+    @import "STYLES/landscape-page/_landscape-page_1600.scss";
+    @import "STYLES/blog-page/_blog-page_1600.scss";
+    @import "STYLES/single-blog-page/_single-blog-page_1600.scss";
+    @import "STYLES/account/_account_1600.scss";
+    @import "STYLES/favorite-page/_favorite-page_1600.scss";
+    @import "STYLES/requisites/_requisites_1600.scss";
+}
+
+@media screen and (max-width: 1400px) {
+    @import "STYLES/general/_general_1400.scss";
+}
+
+@media screen and (max-width: 1300px) {
+    @import "STYLES/general/_general_1200.scss";
+    @import "STYLES/header/_header_1200.scss";
+    @import "STYLES/footer/_footer_1200.scss";
+    @import "STYLES/side-bar/_side-bar_1200.scss";
+    @import "STYLES/main/_main_1200.scss";
+    @import "STYLES/quiz/_quiz_1200.scss";
+    @import "STYLES/feedback-block/_feedback-block_1200.scss";
+    @import "STYLES/about-block/_about-block_1200.scss";
+    @import "STYLES/comment-block/_comment-block_1200.scss";
+    @import "STYLES/blog-block/_blog-block_1200.scss";
+    @import "STYLES/catalog/_catalog_1200.scss";
+    @import "STYLES/product-page/_product-page_1200.scss";
+    @import "STYLES/order-page/_order-page_1200.scss";
+    @import "STYLES/delivery-info/_delivery-info_1200.scss";
+    @import "STYLES/cart-page/_cart-page_1200.scss";
+    @import "STYLES/service-page/_service-page_1200.scss";
+    @import "STYLES/about-page/_about-page_1200.scss";
+    @import "STYLES/about-page/_services-section_1200.scss";
+    @import "STYLES/landscape-page/_landscape-page_1200.scss";
+    @import "STYLES/blog-page/_blog-page_1200.scss";
+    @import "STYLES/single-blog-page/_single-blog-page_1200.scss";
+    @import "STYLES/account/_account_1200.scss";
+    @import "STYLES/favorite-page/_favorite-page_1200.scss";
+    @import "STYLES/requisites/_requisites_1200.scss";
+}
+
+@media screen and (max-width: 1000px) {
+    @import "STYLES/variables/_indents-800.scss";
+    @import "STYLES/variables/_fonts-800.scss";
+    @import "STYLES/header/_header_800.scss";
+    @import "STYLES/footer/_footer_800.scss";
+    @import "STYLES/popup/_popup_800.scss";
+    @import "STYLES/side-bar/_side-bar_800.scss";
+    @import "STYLES/main/_main_800.scss";
+    @import "STYLES/quiz/_quiz_800.scss";
+    @import "STYLES/authorization/_authorization_800.scss";
+    @import "STYLES/feedback-block/_feedback-block_800.scss";
+    @import "STYLES/about-block/_about-block_800.scss";
+    @import "STYLES/comment-block/_comment-block_800.scss";
+    @import "STYLES/blog-block/_blog-block_800.scss";
+    @import "STYLES/catalog/_catalog_800.scss";
+    @import "STYLES/product-page/_product-page_800.scss";
+    @import "STYLES/contacts-page/contacts-page_800.scss";
+    @import "STYLES/order-page/_order-page_800.scss";
+    @import "STYLES/delivery-info/_delivery-info_800.scss";
+    @import "STYLES/cart-page/_cart-page_800.scss";
+    @import "STYLES/service-page/_service-page_800.scss";
+    @import "STYLES/about-page/_about-page_800.scss";
+    @import "STYLES/about-page/_services-section_800.scss";
+    @import "STYLES/landscape-page/_landscape-page_800.scss";
+    @import "STYLES/blog-page/_blog-page_800.scss";
+    @import "STYLES/single-blog-page/_single-blog-page_800.scss";
+    @import "STYLES/account/_account_800.scss";
+    @import "STYLES/favorite-page/_favorite-page_800.scss";
+    @import "STYLES/404/_404_800.scss";
+    @import "STYLES/requisites/_requisites_800.scss";
+}
+
+@media screen and (max-width: 600px) {
+    @import "STYLES/variables/_indents-600.scss";
+    @import "STYLES/general/_general_600.scss";
+    @import "STYLES/variables/_fonts-600.scss";
+    @import "STYLES/header/_header_600.scss";
+    @import "STYLES/footer/_footer_600.scss";
+    @import "STYLES/catalog/_catalog_600.scss";
+    @import "STYLES/product-card/_product-card_600.scss";
+    @import "STYLES/product-page/_product-page_600.scss";
+    @import "STYLES/cart-page/_cart-page_600.scss";
+    @import "STYLES/cart-card/_cart-card_600.scss";
+    @import "STYLES/order-page/_order-page_600.scss";
+    @import "STYLES/popup/_popup_600.scss";
+    @import "STYLES/main/_main_600.scss";
+    @import "STYLES/contacts-page/contacts-page_600.scss";
+    @import "STYLES/quiz/_quiz_600.scss";
+    @import "STYLES/feedback-block/_feedback-block_600.scss";
+    @import "STYLES/about-block/_about-block_600.scss";
+    @import "STYLES/comment-block/_comment-block_600.scss";
+    @import "STYLES/blog-block/_blog-block_600.scss";
+    @import "STYLES/delivery-info/_delivery-info_600.scss";
+    @import "STYLES/service-page/_service-page_600.scss";
+    @import "STYLES/about-page/_about-page_600.scss";
+    @import "STYLES/about-page/_services-section_600.scss";
+    @import "STYLES/landscape-page/_landscape-page_600.scss";
+    @import "STYLES/blog-page/_blog-page_600.scss";
+    @import "STYLES/single-blog-page/_single-blog-page_600.scss";
+    @import "STYLES/account/_account_600.scss";
+    @import "STYLES/favorite-page/_favorite-page_600.scss";
+    @import "STYLES/404/_404_600.scss";
+    @import "STYLES/requisites/_requisites_600.scss";
+}

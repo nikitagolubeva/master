@@ -1,0 +1,23 @@
+.feedback-block {
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 480px;
+    }
+
+    &__left {
+        padding-left: 16px;
+
+        p {
+            max-width: 400px;
+        }
+    }
+
+    &__right {
+        padding-right: 32px;
+        padding-left: 48px;
+    }
+
+    .status-sended {
+        padding-left: 16px;
+    }
+}

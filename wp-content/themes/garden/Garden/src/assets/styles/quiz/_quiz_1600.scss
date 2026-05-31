@@ -1,0 +1,15 @@
+.quiz-block {
+    .quiz-step {
+        &__header {
+            margin-right: 32px;
+        }
+    }
+
+    .swiper-scrollbar {
+        width: calc(100% - 32px);
+    }
+
+    &__buttons {
+        padding-right: 32px;
+    }
+}

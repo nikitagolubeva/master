@@ -1,0 +1,21 @@
+.account {
+    .data-section {
+        &__container {
+            column-gap: 0;
+            flex-direction: column;
+            row-gap: 24px;
+        }
+
+        &__link {
+            margin-top: 16px;
+
+            &:first-of-type {
+                margin-top: 24px;
+            }
+        }
+    }
+
+    .tablet {
+        display: block;
+    }
+}

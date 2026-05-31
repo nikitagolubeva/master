@@ -1,0 +1,133 @@
+.quiz-block {
+    .quiz-step {
+        &__header {
+            margin-right: 16px;
+        }
+
+        &__content {
+            &__input-with-btn {
+                padding-bottom: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    .service-item {
+        label {
+            max-width: 140px;
+            min-width: 140px;
+
+            p {
+                hyphens: manual;
+            }
+        }
+    }
+
+    .swiper-scrollbar {
+        width: calc(100% - 16px);
+    }
+
+    .service-slider {
+        padding-bottom: 20px;
+    }
+
+    .size-item {
+        width: 100%;
+    }
+
+    .inputs-container {
+        flex-direction: column;
+        margin-top: 0;
+
+        .input-container:not(:first-of-type) {
+            margin-left: 0;
+            margin-top: 0;
+        }
+    }
+    .pack-slider {
+        .swiper-slide {
+            width: 80%;
+
+            .pack-item {
+                width: 100%;
+
+                label {
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 192px;
+                }
+            }
+        }
+    }
+
+    .size-slider {
+        width: 100%;
+        padding-bottom: 30px;
+
+        .swiper-slide {
+            width: 55%;
+        }
+
+        .swiper-scrollbar {
+            display: block;
+        }
+    }
+
+    .step-4,
+    .step-6,
+    .step-7 {
+        .quiz-step__content {
+            padding-right: 16px;
+        }
+    }
+
+    .step-7 {
+        .input-container {
+            label {
+                display: none;
+            }
+        }
+    }
+
+    &__buttons {
+        padding-right: 16px;
+
+        margin-top: 32px;
+
+        justify-content: space-between;
+        column-gap: 20px;
+    }
+
+    &__prev-btn {
+        display: flex;
+        width: 52px;
+        height: 52px;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            path {
+                stroke: var(--bw0);
+            }
+        }
+
+        justify-content: center;
+        align-items: center;
+
+        span {
+            display: none;
+        }
+        &::after {
+            display: none;
+        }
+
+        background-color: #d6d6d6;
+
+        border: 1px solid var(--bw4);
+        border-radius: 2px;
+    }
+
+    &__next-btn {
+        margin-left: 0;
+    }
+}
