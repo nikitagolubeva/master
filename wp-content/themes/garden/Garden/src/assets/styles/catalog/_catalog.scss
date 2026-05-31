@@ -231,7 +231,7 @@
 }
 
 .catalog-subcategories {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 
     &.hidden {
         display: none;
@@ -248,20 +248,26 @@
 }
 
 .catalog-subcategory__item {
-    padding: 6px 16px;
-    border: 1px solid var(--secondary);
-    border-radius: 4px;
+    padding: 8px 20px;
+    border: 1.5px solid var(--bw3);
+    border-radius: 2px;
     cursor: pointer;
-    font-size: 14px;
-    color: var(--bw0);
-    transition: background-color 0.2s, color 0.2s;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--bw1);
+    background: transparent;
+    transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+    white-space: nowrap;
 
     &:hover {
-        background-color: var(--secondary);
-        color: var(--bw4);
+        border-color: var(--secondary);
+        color: var(--secondary);
     }
 
     &.active {
+        border-color: var(--secondary);
         background-color: var(--secondary);
         color: var(--bw4);
         pointer-events: none;

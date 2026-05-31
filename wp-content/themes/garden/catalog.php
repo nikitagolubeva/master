@@ -79,11 +79,10 @@ require_once "template-parts/breadcrumb.php";
                             </svg>
                     </button>
                 </div>
-                <div class="catalog-subcategories hidden">
-                    <ul class="catalog-subcategories__list">
-                    </ul>
-                </div>
                 <div class="catalog__goods">
+                    <div class="catalog-subcategories hidden">
+                        <ul class="catalog-subcategories__list"></ul>
+                    </div>
                     <div class="catalog__functional-container">
                         <div class="search-input-container">
                             <input class="search-input js-desc-search" type="text" placeholder="Поиск">
